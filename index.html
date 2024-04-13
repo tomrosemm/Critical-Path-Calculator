@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Critical Path Calculator</title>
+        <style>
+
+            #CPCHeader {
+                text-decoration: black underline;
+                float: left;
+                font-size: 48;
+            }
+
+            #infoicon {
+                float: right;
+                padding-left: 15px;
+                padding-top: 15px;
+                width: 40px;
+                height: 40px;
+            }
+
+            #plusicon {
+                margin: auto;
+            }
+
+            #calculateicon {
+                text-align: center;
+            }
+
+            #calculateButton {
+                padding: 0;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+
+            #plusButton {
+                padding: 0;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+
+            #blocksforscrolling {
+                text-align: justify;
+            }
+
+            #horizontalsplit {
+                border: none;
+                width: 88%;
+                height: 3px;
+                background-color: black;
+                margin: auto;
+            }
+
+            div.scroll {
+            margin: 4px, 4px;
+            padding: 4px;
+            background-color: white;
+            max-width: 88%;
+            height: 200px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            }
+
+        </style>
+        <link rel="stylesheet" href="ourcssisaveryfinecss.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+        <div class="TopSection">
+            <h1 id="CPCHeader">Critical Path Calcualtor</h2>
+            <a href="help.html"><img src="infoicon.jpg" id="infoicon"></a>
+        </div>
+
+        <div class="blockheader">
+            <div class="column1">
+                <h4>Name</h4>
+            </div>
+            <div class="column2">
+                <h4>Predecessors</h4>
+            </div>
+            <div class="column3">
+                <h4>Successors</h4>
+            </div>
+            <div class="column4">
+                <h4>Duration</h4>
+            </div>
+            <div class="column5">
+                <h4>EST</h4>
+            </div>
+            <div class="column6">
+                <h4>EFT</h4>
+            </div>
+            <div class="column7">
+                <h4>LST</h4>
+            </div>
+            <div class="column8">
+                <h4>LFT</h4>
+            </div>
+            <div class="column9">
+                <h4>Slack</h4>
+            </div>
+            <div class="column10">
+                <h4>Delete Row</h4>
+            </div>
+
+        </div>
+
+        <div class="scroll">
+
+            <div class="inputRow">
+                <span>
+                    <input type="text" class="c0lumn1">
+                    <input type="text" class="c0lumn2">
+                    <input type="text" class="c0lumn3">
+                    <input type="text" class="c0lumn4">
+                    <input type="text" class="c0lumn5">
+                    <input type="text" class="c0lumn6">
+                    <input type="text" class="c0lumn7">
+                    <input type="text" class="c0lumn8">
+                    <input type="text" class="c0lumn9">
+                    <input type="text" class="c0lumn10">
+                </span>
+            </div>
+            
+            <p id="blocksforscrolling">Lorem ipsum dolor sit amet, consectetur 
+                adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                dolore magna aliqua. Cursus euismod quis viverra nibh cras 
+                pulvinar. Pulvinar neque laoreet suspendisse interdum consectetur 
+                libero. Est ultricies integer quis auctor elit sed vulputate mi. 
+                Sit amet venenatis urna cursus eget nunc scelerisque viverra mauris. 
+                Nisl rhoncus mattis rhoncus urna neque viverra. Blandit massa enim 
+                nec dui nunc mattis enim ut tellus. Fringilla phasellus faucibus 
+                scelerisque eleifend donec pretium vulputate sapien. Tempor commodo 
+                ullamcorper a lacus vestibulum sed arcu non. Dictum non consectetur 
+                a erat nam at lectus urna. Neque volutpat ac tincidunt vitae semper 
+                quis lectus nulla. Proin fermentum leo vel orci. Ac feugiat sed lectus 
+                vestibulum mattis ullamcorper velit sed ullamcorper. Sem integer vitae 
+                justo eget magna fermentum iaculis eu. Ultrices dui sapien eget mi proin.
+                Donec pretium vulputate sapien nec sagittis aliquam. Arcu felis bibendum 
+                ut tristique et egestas quis. Feugiat nibh sed pulvinar proin gravida hendrerit. 
+                Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam. 
+                Duis ut diam quam nulla. Mattis nunc sed blandit libero volutpat sed. Dignissim 
+                convallis aenean et tortor. Iaculis nunc sed augue lacus viverra. Luctus accumsan 
+                tortor posuere ac ut consequat semper. Scelerisque viverra mauris in aliquam sem 
+                fringilla ut morbi tincidunt. Eu nisl nunc mi ipsum faucibus vitae aliquet nec.
+                Eu nisl nunc mi ipsum faucibus vitae aliquet nec.Eu nisl nunc mi ipsum faucibus vitae aliquet nec.
+                Eu nisl nunc mi ipsum faucibus vitae aliquet nec.Eu nisl nunc mi ipsum faucibus vitae aliquet nec.
+                elegant
+            </p>
+
+
+            <div class="center">
+                <button id="plusButton">
+                    <img src="plusicon.jpg" id="plusicon">
+                </button>
+            </div>
+
+            <!--Plus Button Modal-->
+            <div id="plusModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>This will add a new entry row broski</p>
+                </div>
+
+            </div>
+        
+        </div>
+
+        <div class="center">
+
+            <div class="calculatetooltip">
+
+                <a href="why.html">
+                <div id="calculateicon">
+                    <img src="calculateicon.jpg">
+                </div>
+                </a>
+
+                <span class="calculatetooltiptext">This will calculate the Critical Path if entries are valid</span>
+
+            </div>
+        </div>
+        <br><br>
+
+        <div class="center">
+            <hr id="horizontalsplit">
+        </div>
+
+        <div class="twocolumns">
+            <div class="col1" style="padding: 3%;">
+
+                <div class="center">
+                    <img src="infographicplaceholder.jpg">
+                </div>
+
+                <div class="center">
+                    <h4>Toggle Slack Time / Duration</h4>
+                    <p>Off</p>
+                </div>
+                <div class="center">
+                <div class="toggle-container">
+                    <input type="checkbox" id="toggle">
+                    <label class="toggle" for="toggle"></label>
+                </div>
+                </div>
+
+                <div class="center">
+                    <p>On</p>
+                </div>
+
+
+            </div>
+
+            <div class="col2" style="padding: 3%;">
+                <div class="scrolling-wrapper">
+                    <div class="card"><img src="https://www.psri.us/psricms/wp-content/uploads/2015/12/9-cropped-760x360.jpg" style="width: 4000px; height: 500px;"></div>
+                  </div>
+
+            </div>
+
+        </div>
+
+        <script src="somekickassjavascript.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    </body>
+</html>
