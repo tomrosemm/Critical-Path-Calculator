@@ -30,8 +30,7 @@
 
 .blockheader {
     display: flex;
-    text-align: justify;
-    width: 89%;
+    width: 90%;
     margin: auto;
 }
 
@@ -39,51 +38,60 @@
     width: 10%;
     flex: 1;
     text-align: center;
+    padding: 0%;
 }
 .column2 {
     width: 10%;
     flex: 1;
     text-align: center;
+    padding: 0%;
 }
 .column3 {
     width: 10%;
     flex: 1;
     text-align: center;
+    padding: 0%;
 }
 .column4 {
     width: 10%;
     flex: 1;
     text-align: center;
+    padding: 0%;
 }
 .column5 {
     width: 10%;
     flex: 1;
     text-align: center;
+    padding: 0%;
 }
 .column6 {
     width: 10%;
     flex: 1;
     text-align: center;
+    padding: 0%;
 }
 .column7 {
     width: 10%;
     flex: 1;
     text-align: center;
+    padding: 0%;
 }
 .column8 {
     width: 10%;
     flex: 1;
     text-align: center;
+    padding: 0%;
 }
 .column9 {
     width: 10%;
     flex: 1;
     text-align: center;
+    padding: 0%;
 }
 .column10 {
     width: 10%;
     flex: 1;
-    text-align: center;
+    padding: 0%;
 }
 
 /* The Modal (background) */
