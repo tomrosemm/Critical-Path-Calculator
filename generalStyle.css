@@ -242,45 +242,5 @@ input[type="checkbox"]:checked + .toggle:before {
     text-align: center;
     width: 100%;
     margin: auto;
-}
-
-.c0lumn1 {
-    width: 9.5%;
-    flex: 1;
-}
-.c0lumn2 {
-    width: 9.5.%;
-    flex: 1;
-}
-.c0lumn3 {
-    width: 9.5%;
-    flex: 1;
-}
-.c0lumn4 {
-    width: 9.5%;
-    flex: 1;
-}
-.c0lumn5 {
-    width: 9.5%;
-    flex: 1;
-}
-.c0lumn6 {
-    width: 9.5%;
-    flex: 1;
-}
-.c0lumn7 {
-    width: 9.5%;
-    flex: 1;
-}
-.c0lumn8 {
-    width: 9.5%;
-    flex: 1;
-}
-.c0lumn9 {
-    width: 9.5%;
-    flex: 1;
-}
-.c0lumn10 {
-    width: 9.5%;
-    flex: 1;
+    padding-top: 5px;
 }
