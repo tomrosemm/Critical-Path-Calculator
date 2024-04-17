@@ -1,0 +1,61 @@
+#CPCHeader {
+  text-decoration: black underline;
+  float: left;
+  font-size: 48;
+}
+
+#infoicon {
+  float: right;
+  padding-left: 15px;
+  padding-top: 15px;
+  width: 40px;
+  height: 40px;
+}
+
+#plusicon {
+  margin: auto;
+}
+
+#calculateicon {
+  text-align: center;
+}
+
+#calculateButton {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#plusButton {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#blocksforscrolling {
+  text-align: justify;
+}
+
+#horizontalsplit {
+  border: none;
+  width: 88%;
+  height: 3px;
+  background-color: black;
+  margin: auto;
+}
+
+div.scroll {
+margin: 4px, 4px;
+padding: 4px;
+background-color: white;
+max-width: 90%;
+height: 200px;
+overflow-x: hidden;
+overflow-y: auto;
+align-self: center;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
