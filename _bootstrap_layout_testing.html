@@ -350,10 +350,13 @@
             </div>
           </div>
 
-          <!--It's a table. Could be a good implementation option for the workflow we are going for, 
-          but I will say that I tested it at the size of the page we want it to take up but now with the 10 rows it would need and it caused some serious issues. 
-          I didn't test it in isolation, though, so maybe still valid option. Might be easier to stick with a collection of elements arranged inside a scrollable window
-          such as in Scrollable Area Method 2 -->
+          <!-- *[A]* It's a table. Could be a good implementation option for the workflow we are going for, and while in this location because of something I haven't tracked down,
+          10 columns kill it, but in isolation 10 works perfectly fine -->
+
+          <!--The culprit really does seem to be bootstrap table styling, it was fine in isolation until I started adding bootstrap styles to it-->
+
+          <!--Okay yeah a table is going to work just fine I think. The trick seems to be to not use bootstrap on the table itself at all, however
+          it's totally okay to use Bootstrap elements within the cells of the table. *[B]* From *[A]* to *[B]*: 3 hours ish lol-->
           
           <!--IDK if it's obvious and I'm slow but I think using the clicking of the predecessor & 
           successor dropdown menus as a trigger to gather the appropriate elements to populate the menu would be a good methodology-->
