@@ -4,7 +4,8 @@
     <head>
         <title>Bootstrap Layout Testing</title>
         <style>
-
+        
+        /* Newer Scroll Div that works with Boot as well*/
         .scrollable-div {
             height: 200px; /* Locked Height */
             overflow-y: auto; /* Vertical Scroll On */
@@ -145,6 +146,9 @@
         </div>
 
         <h4 class="text-center" style="padding-top: 5px; padding-bottom: 5px;">Scrollable Area Method 2</h4>
+
+        <!--This does seem to fit more correctly when isolated, leading me to thing that something wrapping it is making it less wide than intended. I think. Search, and for
+        Anything surrounding it, check for built is sizing properties that could be giving issues  -->
 
         <div class="container">
             <div class="row">
