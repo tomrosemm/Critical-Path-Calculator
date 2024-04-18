@@ -182,8 +182,8 @@
 
         <h4 class="text-center" style="padding-top: 5px; padding-bottom: 5px;">Scrollable Area Method 2</h4>
 
-        <!--This does seem to fit more correctly when isolated, leading me to thing that something wrapping it is making it less wide than intended. I think. Search, and for
-        Anything surrounding it, check for built is sizing properties that could be giving issues  -->
+        <!--This does seem to fit more correctly when isolated, leading me to thing that something wrapping it is making it less wide than intended. I think. Look for that, and for
+        Anything surrounding it, check for built in sizing properties that could be giving issues -->
 
         <div class="container">
             <div class="row">
@@ -350,7 +350,13 @@
             </div>
           </div>
 
-          <!--It's a table. Probably a really good implementation option for the workflow we are going for, even if we only use the table to interact with the data-->
+          <!--It's a table. Could be a good implementation option for the workflow we are going for, 
+          but I will say that I tested it at the size of the page we want it to take up but now with the 10 rows it would need and it caused some serious issues. 
+          I didn't test it in isolation, though, so maybe still valid option. Might be easier to stick with a collection of elements arranged inside a scrollable window
+          such as in Scrollable Area Method 2 -->
+          
+          <!--IDK if it's obvious and I'm slow but I think using the clicking of the predecessor & 
+          successor dropdown menus as a trigger to gather the appropriate elements to populate the menu would be a good methodology-->
 
           <table style="margin-top: 2%; width: 75%; margin-left: auto; margin-right: auto;" class="table table-striped table-primary table-hover">
             <thead>
