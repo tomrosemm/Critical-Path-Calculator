@@ -47,7 +47,8 @@
   margin: auto;
 }
 
-div.scroll {
+/* Original scrollable div class for current index.html page*/
+div.scroll { 
 margin: 4px, 4px;
 padding: 4px;
 background-color: white;
