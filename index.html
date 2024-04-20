@@ -130,121 +130,15 @@
                     <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
                     <td><button type="button" class="btn btn-danger">Delete Row</button></td>
                 </tr>
-                <tr>
-                    <td>
-                        <input type="text" article class="form-control" placeholder="Name">
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td><input type="text" class="form-control" placeholder="Duration"></td>
-                    <td><input type="text" class="form-control" placeholder="EST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="EFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
-                    <td><button type="button" class="btn btn-danger">Delete Row</button></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" article class="form-control" placeholder="Name">
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td><input type="text" class="form-control" placeholder="Duration"></td>
-                    <td><input type="text" class="form-control" placeholder="EST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="EFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
-                    <td><button type="button" class="btn btn-danger">Delete Row</button></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" article class="form-control" placeholder="Name">
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td><input type="text" class="form-control" placeholder="Duration"></td>
-                    <td><input type="text" class="form-control" placeholder="EST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="EFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
-                    <td><button type="button" class="btn btn-danger">Delete Row</button></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" article class="form-control" placeholder="Name">
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td><input type="text" class="form-control" placeholder="Duration"></td>
-                    <td><input type="text" class="form-control" placeholder="EST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="EFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
-                    <td><button type="button" class="btn btn-danger">Delete Row</button></td>
-                </tr>
                 
             </table>
+
+            <div>
+                <button type="button" class="btn btn-primary" id="addButton">Add Row</button> <!--The fuck won't this center-->
+            </div>
+
         </div>
+
 
         <div class="center">
 
@@ -294,11 +188,37 @@
             <div class="col2" style="padding: 3%;">
                 <div class="scrolling-wrapper">
                     <div class="card"><img src="https://www.psri.us/psricms/wp-content/uploads/2015/12/9-cropped-760x360.jpg" style="width: 4000px; height: 500px;"></div>
-                  </div>
+                </div>
 
             </div>
 
         </div>
+
+        <!--Jquery Script for adding row function-->
+        <script>
+            $(document).ready(function(){
+    
+                function addNewRow() {
+                    var newRow = $("<tr>");
+                    newRow.append('<td><input type="text" article class="form-control" placeholder="Name"></td>');
+                    newRow.append('<td><select class="form-select"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
+                    newRow.append('<td><select class="form-select"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
+                    newRow.append('<td><input type="text" class="form-control" placeholder="Duration"></td>');
+                    newRow.append('<td><input type="text" class="form-control" placeholder="EST" disabled></td>');
+                    newRow.append('<td><input type="text" class="form-control" placeholder="EFT" disabled></td>');
+                    newRow.append('<td><input type="text" class="form-control" placeholder="LST" disabled></td>');
+                    newRow.append('<td><input type="text" class="form-control" placeholder="LFT" disabled></td>');
+                    newRow.append('<td><input type="text" class="form-control" placeholder="Slack" disabled></td>');
+                    newRow.append('<td><button type="button" class="btn btn-danger">Delete Row</button></td>');
+                    
+                    $(".possibleInputTable").append(newRow);
+                }
+            
+                $("#addButton").click(function(){
+                    addNewRow();
+                });
+            });
+            </script>
 
         <script src="mainScript.js"></script>
 
