@@ -61,7 +61,7 @@
         </div>
 
         <div class="scrollATable">
-            <table class="possibleInputTable">
+            <table class="possibleInputTable" id="myTable">
                 <tr>
                     <th>Name</th>
                     <th>Predecessors</th>
@@ -100,7 +100,7 @@
                     <td><input type="text" class="form-control" placeholder="LST" disabled></td>
                     <td><input type="text" class="form-control" placeholder="LFT" disabled></td>
                     <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
-                    <td><button type="button" class="btn btn-danger">Delete Row</button></td>
+                    <td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>
                 </tr>
                 <tr>
                     <td>
@@ -128,7 +128,7 @@
                     <td><input type="text" class="form-control" placeholder="LST" disabled></td>
                     <td><input type="text" class="form-control" placeholder="LFT" disabled></td>
                     <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
-                    <td><button type="button" class="btn btn-danger">Delete Row</button></td>
+                    <td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>
                 </tr>
                 
             </table>
@@ -209,7 +209,7 @@
                     newRow.append('<td><input type="text" class="form-control" placeholder="LST" disabled></td>');
                     newRow.append('<td><input type="text" class="form-control" placeholder="LFT" disabled></td>');
                     newRow.append('<td><input type="text" class="form-control" placeholder="Slack" disabled></td>');
-                    newRow.append('<td><button type="button" class="btn btn-danger">Delete Row</button></td>');
+                    newRow.append('<td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>');
                     
                     $(".possibleInputTable").append(newRow);
                 }
@@ -218,7 +218,7 @@
                     addNewRow();
                 });
             });
-            </script>
+        </script>
 
         <script src="mainScript.js"></script>
 
