@@ -30,6 +30,11 @@
             background-color: #111;
             }
 
+            #outputBox {
+                margin:auto;
+                margin-top: 5%;
+            }
+
         </style>
         
         <!--Jquery-->
@@ -65,7 +70,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Predecessors</th>
-                    <th>Sucessors</th>
+                    <th>Successors</th>
                     <th>Duration</th>
                     <th>EST</th>
                     <th>EFT</th>
@@ -102,55 +107,32 @@
                     <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
                     <td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>
                 </tr>
-                <tr>
-                    <td>
-                        <input type="text" article class="form-control" placeholder="Name">
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </td>
-                    <td><input type="text" class="form-control" placeholder="Duration"></td>
-                    <td><input type="text" class="form-control" placeholder="EST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="EFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LST" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="LFT" disabled></td>
-                    <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
-                    <td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>
-                </tr>
+
                 
             </table>
 
-            <div class="center">
-                <div>
-                    <button type="button" class="btn btn-success" id="addButton">Add Row</button> <!--The fuck won't this center-->
-                </div>
-    
-                <div class="calculatetooltip">
-    
-                    <!-- Here is the calculate button, this should call the script to calculate everything -->
-                    <div id="calculateicon">
-                        <button type="button" class="btn btn-primary btn-large" id="calculateButton">Calculate</button>
-                    </div>
-                    </a>
-    
-                    <span class="calculatetooltiptext">This will calculate the Critical Path if entries are valid</span>
-    
-                </div>
+        </div>
+
+        <div class="center" id="buttonGroup">
+            <div>
+                <button type="button" class="btn btn-success" id="addButton">Add Row</button>
             </div>
 
+            <div class="calculatetooltip">
+
+                <!-- Here is the calculate button, this should call the script to calculate everything -->
+                <div id="calculateicon">
+                    <button type="button" class="btn btn-primary btn-large" id="calculateButton">Calculate</button>
+                </div>
+                </a>
+
+                <span class="calculatetooltiptext">This will calculate the Critical Path if entries are valid</span>
+
+            </div>
+        </div>
+
+        <div class="center">
+            <h1 id="outputBox"></h1>
         </div>
 
         <!--Mr Chicken said this is okay-->
@@ -182,6 +164,16 @@
 
         <script src="mainScript.js"></script>
         <script src="dataManagement.js"></script>
+        <script type="module" src="displayObject.js"></script>
+
+        <script>
+            // Import the tableInputRow object from script.js
+            import { tableInputRow } from './displayObject.js';
+    
+            // Display the properties
+            document.getElementById("outputBox").innerHTML =
+                "Name: " + tableInputRow.name + ", Predecessors: " + tableInputRow.predecessors + ", Successors: " + tableInputRow.successors + ", Duration: " + tableInputRow.duration;
+        </script>
 
         <!--Bootstrap-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
