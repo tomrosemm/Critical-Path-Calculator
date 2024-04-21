@@ -65,6 +65,8 @@
         all of the row objects, possibly filtered by location on table as proposed if we decide to go with that. In this system the delete button would also need to not only delete the row and associated object, but also shift the index of all following row objects in the table-->
         
         <!--Select options need to allow multiple selection I believe, based on how the set up works?-->
+
+        <!--Events we should consider triggers for updating this set of arrays: Clicking on dropdown for either predecessor or successor; clicking add row button; Clicking Delete Row Button; Clicking Calculate Button; Form change -->
         <div class="scrollATable">
             <table class="possibleInputTable" id="myTable">
                 <tr>
@@ -126,8 +128,6 @@
                 </div>
                 </a>
 
-                <span class="calculatetooltiptext">This will calculate the Critical Path if entries are valid</span>
-
             </div>
         </div>
 
@@ -166,13 +166,9 @@
         <script src="dataManagement.js"></script>
         <script type="module" src="displayObject.js"></script>
 
+        <!--Import the tableInputRow object from displayObject.js-->
         <script>
-            // Import the tableInputRow object from script.js
             import { tableInputRow } from './displayObject.js';
-    
-            // Display the properties
-            document.getElementById("outputBox").innerHTML =
-                "Name: " + tableInputRow.name + ", Predecessors: " + tableInputRow.predecessors + ", Successors: " + tableInputRow.successors + ", Duration: " + tableInputRow.duration;
         </script>
 
         <!--Bootstrap-->

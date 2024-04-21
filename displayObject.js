@@ -1,5 +1,3 @@
-
-
 // Displaying object properties
 
 export const tableInputRow = {
