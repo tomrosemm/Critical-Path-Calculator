@@ -60,6 +60,11 @@
             <a href="help.html"><img src="images/infoicon.jpg" id="infoicon"></a>
         </div>
 
+        <!--So we need the input of each row to be stored as an object with the value of each selection, localized to each cell, as a value in the object, whenever the add button, calculate button, or one of the drop down menus are pressed
+        If the specific object already exists, we need to update it with the new details. If it doesn't already exist, we need to create a new object with it's details. In order to allow for this updating, we probably need to implement a counter system of 
+        some sort as well to add an index to the row objects and allow us to update the rows while still checking against same named rows. This should allow us to also populate the predecessor and successor tables by just selecting those values from those fields in 
+        all of the row objects, possibly filtered by location on table as proposed if we decide to go with that-->
+        
         <!--Select options need to allow multiple selection I believe, based on how the set up works?-->
         <div class="scrollATable">
             <table class="possibleInputTable" id="myTable">
