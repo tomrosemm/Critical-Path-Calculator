@@ -1,7 +1,7 @@
 // Class for TableInputRow
 class TableInputRow {
     constructor(name, predecessors, successors, duration, est, eft, lst, lft, slack) {
-        this.id = TableInputRow.incrementId() - 1;
+        this.id = TableInputRow.incrementId();
         this.name = name;
         this.predecessors = predecessors;
         this.successors = successors;
@@ -15,7 +15,7 @@ class TableInputRow {
 
     static incrementId() {
         if (!this.latestId) {
-            this.latestId = 1;
+            this.latestId = 0;
         } else {
             this.latestId++;
         }
