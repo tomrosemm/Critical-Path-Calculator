@@ -71,7 +71,8 @@
         
         <!--Select options need to allow multiple selection I believe, based on how the set up works?-->
 
-        <!--Events we should consider triggers for updating this set of arrays: Clicking on dropdown for either predecessor or successor; clicking add row button; Clicking Delete Row Button; Clicking Calculate Button; Form change -->
+        <!--Events we should consider triggers for updating this set of arrays: Clicking on dropdown for either predecessor 
+        or successor; clicking add row button; Clicking Delete Row Button; Clicking Calculate Button; Form change -->
         <div class="scrollATable">
             <table class="possibleInputTable" id="myTable">
                 <tr>
@@ -138,22 +139,32 @@
 
         <div class="center">
             <!--Temp button independent of other actions just to update array based on rows in table-->
+            <!--Add onclick function for reading table and updating object array-->
             <button type="button" class="btn btn-primary btn-large" style="margin-top: 2%;">Update Object Array object array</button>
             <h1 id="outputBox"></h1>
         </div>
 
-        <!--Using an object in an array to populate outputBox-->
+        <!--Constructing an array of objects that are meant to hold the input values from the table-->
         <script>
-            // Define rowArray and push tableInputRow into it
+
+            // Define an array
             const rowArray = [];
 
+            // Constructor that uses i to increment the id# each time the object is made
             let i = 0
-    
+            
+            
             const tableInputRow = {
-                ['name$(i)']: "Task " + i,
-                ['predecessors$(i)']: ["Task 0"],
-                ['successors$(i++)']: ["Task 2"],
+                id: i++,
+                name: "Task 1 ",
+                predecessors: ["Task 0"],
+                successors: ["Task 2"],
                 duration: 5,
+                est: "",
+                eft: "",
+                lst: "",
+                lft: "",
+                slack: ""
             };
             
             rowArray.push(tableInputRow);
