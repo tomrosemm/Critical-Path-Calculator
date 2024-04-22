@@ -1,5 +1,5 @@
 // Class for TableInputRow
-// testing for devin
+
 class TableInputRow {
     constructor(name, predecessors, successors, duration, est, eft, lst, lft, slack) {
         this.id = TableInputRow.incrementId();
@@ -28,7 +28,7 @@ class TableInputRow {
 const rowArray = [];
 
 // Create a new sample TableInputRow object
-const tableInputRow0 = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
+const tableInputRow0 = new TableInputRow("Task 2", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
 
 const tableInputRow1 = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
 
