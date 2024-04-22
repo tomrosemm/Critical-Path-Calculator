@@ -69,7 +69,7 @@
         all of the row objects, possibly filtered by location on table as proposed if we decide to go with that. 
         In this system the delete button would also need to not only delete the row and associated object, but also shift the index of all following row objects in the table-->
         
-        <!--Select options need to allow multiple selection I believe, based on how the set up works?-->
+        <!--Multiple Select Options - Tweak looks and get rid of display-->
 
         <!--Events we should consider triggers for updating this set of arrays: Clicking on dropdown for either predecessor 
         or successor; clicking add row button; Clicking Delete Row Button; Clicking Calculate Button; Form change -->
@@ -92,20 +92,26 @@
                         <input type="text" article class="form-control" placeholder="Name">
                     </td>
                     <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
+                        <div class="dropdown">
+                            <button onClick="toggleDropdown()">---</button>
+                            <div id="options" class="dropdown-content">
+                                <label><input type="checkbox" value="Task 1"> Task 1</label>
+                                <label><input type="checkbox" value="Task 2"> Task 2</label>
+                                <label><input type="checkbox" value="Task 3"> Task 3</label>
+                            </div>
+                        </div>
+                        <div class="selected-items"></div>
                     </td>
                     <td>
-                        <select class="form-select">
-                            <option>---</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
+                        <div class="dropdown">
+                            <button onClick="toggleDropdown()">---</button>
+                            <div id="options" class="dropdown-content">
+                                <label><input type="checkbox" value="Task 1"> Task 1</label>
+                                <label><input type="checkbox" value="Task 2"> Task 2</label>
+                                <label><input type="checkbox" value="Task 3"> Task 3</label>
+                            </div>
+                        </div>
+                        <div class="selected-items"></div>
                     </td>
                     <td><input type="text" class="form-control" placeholder="Duration"></td>
                     <td><input type="text" class="form-control" placeholder="EST" disabled></td>
@@ -175,6 +181,46 @@
                 document.getElementById("outputBox").innerHTML = Object.values(rowArray[i]);
         </script>
 
+        <!-- Script for Dropdown menu behavior with multiple options for predecessors and successors-->
+        <script>
+            function toggleDropdown() {
+                document.getElementById("options").classList.toggle("show");
+            }
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropdown button')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    for (var i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+
+            document.querySelectorAll('.dropdown-content input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const text = this.value;
+                    const selectedItems = document.querySelector('.selected-items');
+                    const existingItem = selectedItems.querySelector(`[data-value="${text}"]`);
+
+                    if (this.checked) {
+                        if (!existingItem) {
+                            const selectedItem = document.createElement('div');
+                            selectedItem.setAttribute('data-value', text);
+                            selectedItem.innerText = text;
+                            selectedItems.appendChild(selectedItem);
+                        }
+                    } else {
+                        if (existingItem) {
+                            existingItem.remove();
+                        }
+                    }
+                });
+            });
+        </script>
+
         <!--Mr Chicken said this is okay-->
         <!--Jquery Script for adding row function-->
         <script>
@@ -183,8 +229,8 @@
                 function addNewRow() {
                     var newRow = $("<tr>");
                     newRow.append('<td><input type="text" article class="form-control" placeholder="Name"></td>');
-                    newRow.append('<td><select class="form-select"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
-                    newRow.append('<td><select class="form-select"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
+                    newRow.append('<td><div class="dropdown"><button onClick="toggleDropdown()">---</button><div id="options" class="dropdown-content"><label><input type="checkbox" value="Task 1"> Task 1</label><label><input type="checkbox" value="Task 2"> Task 2</label><label><input type="checkbox" value="Task 3"> Task 3</label></div></div><div class="selected-items"></div></td>');
+                    newRow.append('<td><div class="dropdown"><button onClick="toggleDropdown()">---</button><div id="options" class="dropdown-content"><label><input type="checkbox" value="Task 1"> Task 1</label><label><input type="checkbox" value="Task 2"> Task 2</label><label><input type="checkbox" value="Task 3"> Task 3</label></div></div><div class="selected-items"></div></td>');
                     newRow.append('<td><input type="text" class="form-control" placeholder="Duration"></td>');
                     newRow.append('<td><input type="text" class="form-control" placeholder="EST" disabled></td>');
                     newRow.append('<td><input type="text" class="form-control" placeholder="EFT" disabled></td>');
