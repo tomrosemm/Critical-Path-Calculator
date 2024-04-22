@@ -47,11 +47,12 @@ function newGraph(tableRows) {
   for (i in tableRows) {
     row = tableRows[i]
     graph.addVertex(row.name);
+    // Loop over every successor and attempt to add it as an edge
     for (s in row.successors) {
-      
       successor = row.successors[s];
       graph.addEdge(row.name, successor);
     }
+    // Loop over every predecessor and attempt to add it as an edge
     for (p in row.predecessors) {
       predecessor = row.predecessors[p];
       graph.addEdge(predecessor, row.name);
@@ -62,6 +63,7 @@ function newGraph(tableRows) {
 
 function testing() {
   // Initialize table row sample data
+  // TODO: Change these to user input
   const task0 = {
     name: "Task 0",
     predecessors: [],
