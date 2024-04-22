@@ -7,7 +7,9 @@ class Graph {
 
   // function to add an edge FROM v TO w
   addEdge(v, w) {
-    this.adjList.get(v).push(w);
+    if (!this.adjList.get(v).includes(w)) {
+      this.adjList.get(v).push(w);
+    }
   }
   // Function to add a new vertex to the graph
   addVertex(v) {
@@ -37,29 +39,48 @@ class Graph {
   }
 }
 
-function graph(tableRows) {
+function newGraph(tableRows) {
   // Initialize an empty graph
   let graph = new Graph();
   // Loop over every row, and add it as a vertex
   for (i in tableRows) {
-    row = tableRows[i].name
-    graph.addVertex(row);
-    // TODO: Add successors as edges from this to the task (Or check if it already exists)
-    // TODO: Add predecessors as edges from the task to this (Or check if it already exists)
+    row = tableRows[i]
+    graph.addVertex(row.name);
+    for (s in row.successors) {
+      successor = row.successors[s];
+      //graph.addEdge(row.name, successor);
+    }
+    for (p in row.predecessors) {
+      predecessor = row.predecessors[p];
+      graph.addEdge(predecessor, row.name);
+    }
   }
-  graph.printGraph();
+  return graph
 }
 
 function testing() {
   // Initialize table row sample data
-  const tableInputRow = {
+  const task0 = {
+    name: "Task 0",
+    predecessors: [],
+    successors: ["Task 1"],
+    duration: 2
+  };
+  const task1 = {
     name: "Task 1",
-    predecessors: "Task 0",
-    successors: "Task 2",
+    predecessors: ["Task 0"],
+    successors: ["Task 2"],
     duration: 5
-};
-  const tableRows = [tableInputRow]; // Encapsulate in array
-  graph(tableRows); // Run function
+  };
+  const task2 = {
+    name: "Task 2",
+    predecessors: ["Task 1"],
+    successors: [],
+    duration: 3
+  };
+  const tableRows = [task0, task1, task2]; // Encapsulate in array
+  const g = newGraph(tableRows); // Run function
+  g.printGraph();
 }
 
 // TODO: Remove this call later
