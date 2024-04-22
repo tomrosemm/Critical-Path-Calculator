@@ -103,6 +103,7 @@ function createGraph() {
 
   // the Model holds only the essential information describing the diagram
   diagram.model = new go.GraphLinksModel(
+    // TODO: Make this vertices on a graph, where vertices in the critical path are highlighted red
     [ // a JavaScript Array of JavaScript objects, one per node;
       // the "color" property is added specifically for this app
       { key: 1, text: "Alpha", color: "lightblue" },
@@ -110,6 +111,7 @@ function createGraph() {
       { key: 3, text: "Gamma", color: "lightgreen" },
       { key: 4, text: "Delta", color: "pink" }
     ],
+    // TODO: Make this edges on a graph
     [ // a JavaScript Array of JavaScript objects, one per link
       { from: 1, to: 2 },
       { from: 1, to: 3 },
@@ -124,4 +126,5 @@ function createGraph() {
 
 // TODO: Remove this call later
 //testing(); // Run testing as a script for now
+// TODO: Make this reliant on calculate button press
 createGraph();
