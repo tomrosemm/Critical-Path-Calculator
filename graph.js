@@ -87,6 +87,41 @@ function testing() {
   g.printGraph();
 }
 
+function createGraph() {
+  let diagram = new go.Diagram("graph");
+  // the node template describes how each Node should be constructed
+  diagram.nodeTemplate =
+    new go.Node("Auto")
+      .add(  // the Shape will go around the TextBlock
+        new go.Shape("RoundedRectangle")
+          // Shape.fill is bound to Node.data.color
+          .bind("fill", "color"),
+        new go.TextBlock({ margin: 8 }) // Specify a margin to add some room around the text
+          // TextBlock.text is bound to Node.data.key
+          .bind("text")
+      );
+
+  // the Model holds only the essential information describing the diagram
+  diagram.model = new go.GraphLinksModel(
+    [ // a JavaScript Array of JavaScript objects, one per node;
+      // the "color" property is added specifically for this app
+      { key: 1, text: "Alpha", color: "lightblue" },
+      { key: 2, text: "Beta", color: "orange" },
+      { key: 3, text: "Gamma", color: "lightgreen" },
+      { key: 4, text: "Delta", color: "pink" }
+    ],
+    [ // a JavaScript Array of JavaScript objects, one per link
+      { from: 1, to: 2 },
+      { from: 1, to: 3 },
+      { from: 2, to: 2 },
+      { from: 3, to: 4 },
+      { from: 4, to: 1 }
+    ]);
+
+  // enable Ctrl-Z to undo and Ctrl-Y to redo
+  diagram.undoManager.isEnabled = true;
+}
 
 // TODO: Remove this call later
 //testing(); // Run testing as a script for now
+createGraph();
