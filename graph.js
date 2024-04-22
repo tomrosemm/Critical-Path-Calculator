@@ -44,17 +44,17 @@ function newGraph(tableRows) {
   // Initialize an empty graph
   let graph = new Graph();
   // Loop over every row, and add it as a vertex
-  for (i in tableRows) {
-    row = tableRows[i]
+  for (const i in tableRows) {
+    const row = tableRows[i]
     graph.addVertex(row.name);
     // Loop over every successor and attempt to add it as an edge
-    for (s in row.successors) {
-      successor = row.successors[s];
+    for (let s in row.successors) {
+      const successor = row.successors[s];
       graph.addEdge(row.name, successor);
     }
     // Loop over every predecessor and attempt to add it as an edge
-    for (p in row.predecessors) {
-      predecessor = row.predecessors[p];
+    for (const p in row.predecessors) {
+      const predecessor = row.predecessors[p];
       graph.addEdge(predecessor, row.name);
     }
   }
@@ -86,6 +86,7 @@ function testing() {
   const g = newGraph(tableRows); // Run function
   g.printGraph();
 }
+
 
 // TODO: Remove this call later
 //testing(); // Run testing as a script for now
