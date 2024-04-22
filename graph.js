@@ -1,12 +1,15 @@
 class Graph {
   constructor() {
-    // Adjacency list, from node to array of nodes that it has an edge with
+    // Adjacency list, from string to array of strings representing
+    // tasks that it has an edge with
     this.adjList = new Map();
   }
 
+  // function to add an edge FROM v TO w
   addEdge(v, w) {
     this.adjList.get(v).push(w);
   }
+  // Function to add a new vertex to the graph
   addVertex(v) {
     this.adjList.set(v, [])
   }
@@ -35,27 +38,29 @@ class Graph {
 }
 
 function graph(tableRows) {
+  // Initialize an empty graph
   let graph = new Graph();
+  // Loop over every row, and add it as a vertex
   for (i in tableRows) {
     row = tableRows[i].name
     graph.addVertex(row);
+    // TODO: Add successors as edges from this to the task (Or check if it already exists)
+    // TODO: Add predecessors as edges from the task to this (Or check if it already exists)
   }
   graph.printGraph();
 }
 
-function addEdge(list, v, w) {
-
-}
-
 function testing() {
+  // Initialize table row sample data
   const tableInputRow = {
     name: "Task 1",
     predecessors: "Task 0",
     successors: "Task 2",
     duration: 5
 };
-  const tableRows = [tableInputRow];
-  graph(tableRows);
+  const tableRows = [tableInputRow]; // Encapsulate in array
+  graph(tableRows); // Run function
 }
 
-testing();
+// TODO: Remove this call later
+testing(); // Run testing as a script for now
