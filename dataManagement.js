@@ -27,10 +27,13 @@ class TableInputRow {
 const rowArray = [];
 
 // Create a new sample TableInputRow object
-const tableInputRow = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
+const tableInputRow0 = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
+
+const tableInputRow1 = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
 
 // Push the TableInputRow object to the rowArray
-rowArray.push(tableInputRow);
+rowArray.push(tableInputRow0);
+rowArray.push(tableInputRow1);
 
 // Access the outputBox element and set its innerHTML
 const outputBox = document.getElementById("outputBox");
