@@ -90,26 +90,20 @@
                         <input type="text" article class="form-control" placeholder="Name">
                     </td>
                     <td>
-                        <div class="dropdown">
-                            <button onClick="toggleDropdown()">---</button>
-                            <div id="options" class="dropdown-content">
-                                <label><input type="checkbox" value="Task 1"> Task 1</label>
-                                <label><input type="checkbox" value="Task 2"> Task 2</label>
-                                <label><input type="checkbox" value="Task 3"> Task 3</label>
-                            </div>
-                        </div>
-                        <div class="selected-items"></div>
+                        <select class="form-select">
+                            <option>---</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
                     </td>
                     <td>
-                        <div class="dropdown">
-                            <button onClick="toggleDropdown()">---</button>
-                            <div id="options" class="dropdown-content">
-                                <label><input type="checkbox" value="Task 1"> Task 1</label>
-                                <label><input type="checkbox" value="Task 2"> Task 2</label>
-                                <label><input type="checkbox" value="Task 3"> Task 3</label>
-                            </div>
-                        </div>
-                        <div class="selected-items"></div>
+                        <select class="form-select">
+                            <option>---</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
                     </td>
                     <td><input type="text" class="form-control" placeholder="Duration"></td>
                     <td><input type="text" class="form-control" placeholder="EST" disabled></td>
@@ -124,26 +118,20 @@
                         <input type="text" article class="form-control" placeholder="Name">
                     </td>
                     <td>
-                        <div class="dropdown">
-                            <button onClick="toggleDropdown()">---</button>
-                            <div id="options" class="dropdown-content">
-                                <label><input type="checkbox" value="Task 1"> Task 1</label>
-                                <label><input type="checkbox" value="Task 2"> Task 2</label>
-                                <label><input type="checkbox" value="Task 3"> Task 3</label>
-                            </div>
-                        </div>
-                        <div class="selected-items"></div>
+                        <select class="form-select">
+                            <option>---</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
                     </td>
                     <td>
-                        <div class="dropdown">
-                            <button onClick="toggleDropdown()">---</button>
-                            <div id="options" class="dropdown-content">
-                                <label><input type="checkbox" value="Task 1"> Task 1</label>
-                                <label><input type="checkbox" value="Task 2"> Task 2</label>
-                                <label><input type="checkbox" value="Task 3"> Task 3</label>
-                            </div>
-                        </div>
-                        <div class="selected-items"></div>
+                        <select class="form-select">
+                            <option>---</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
                     </td>
                     <td><input type="text" class="form-control" placeholder="Duration"></td>
                     <td><input type="text" class="form-control" placeholder="EST" disabled></td>
@@ -261,9 +249,9 @@
     
                 function addNewRow() {
                     var newRow = $("<tr>");
-                        newRow.append('<td><input type="text" article class="form-control" placeholder="Name"></td>');
-                    newRow.append('<td><div class="dropdown"><button onClick="toggleDropdown()">---</button><div id="options" class="dropdown-content"><label><input type="checkbox" value="Task 1"> Task 1</label><label><input type="checkbox" value="Task 2"> Task 2</label><label><input type="checkbox" value="Task 3"> Task 3</label></div></div><div class="selected-items"></div></td>');
-                    newRow.append('<td><div class="dropdown"><button onClick="toggleDropdown()">---</button><div id="options" class="dropdown-content"><label><input type="checkbox" value="Task 1"> Task 1</label><label><input type="checkbox" value="Task 2"> Task 2</label><label><input type="checkbox" value="Task 3"> Task 3</label></div></div><div class="selected-items"></div></td>');
+                    newRow.append('<td><input type="text" article class="form-control" placeholder="Name"></td>');
+                    newRow.append('<td><select class="form-select"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
+                    newRow.append('<td><select class="form-select"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
                     newRow.append('<td><input type="text" class="form-control" placeholder="Duration"></td>');
                     newRow.append('<td><input type="text" class="form-control" placeholder="EST" disabled></td>');
                     newRow.append('<td><input type="text" class="form-control" placeholder="EFT" disabled></td>');
