@@ -33,7 +33,8 @@ class Graph {
       for (const j of get_values)
         conc += j + " ";
 
-      // print the vertex and its adjacency list
+      // print the vertex and its adjacency list, or NULL if it has no outgoing edges
+      if (!conc) conc = "NULL"
       console.log(i + " -> " + conc);
     }
   }
@@ -47,8 +48,9 @@ function newGraph(tableRows) {
     row = tableRows[i]
     graph.addVertex(row.name);
     for (s in row.successors) {
+      
       successor = row.successors[s];
-      //graph.addEdge(row.name, successor);
+      graph.addEdge(row.name, successor);
     }
     for (p in row.predecessors) {
       predecessor = row.predecessors[p];
