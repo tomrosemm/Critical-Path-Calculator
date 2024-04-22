@@ -234,33 +234,6 @@
 
   </div>
 
-  <!--Mr Chicken said this is okay-->
-  <!--Jquery Script for adding row function-->
-  <script>
-    $(document).ready(function () {
-
-      function addNewRow() {
-        var newRow = $("<tr>");
-        newRow.append('<td><input type="text" article class="form-control" placeholder="Name"></td>');
-        newRow.append('<td><select class="form-select"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
-        newRow.append('<td><select class="form-select"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="Duration"></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="EST" disabled></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="EFT" disabled></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="LST" disabled></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="LFT" disabled></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="Slack" disabled></td>');
-        newRow.append('<td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>');
-
-        $(".possibleInputTable").append(newRow);
-      }
-
-      $("#addButton").click(function () {
-        addNewRow();
-      });
-    });
-  </script>
-
   <script src="mainScript.js"></script>
   <script src="dataManagement.js"></script>
 
