@@ -88,4 +88,4 @@ function testing() {
 }
 
 // TODO: Remove this call later
-testing(); // Run testing as a script for now
+//testing(); // Run testing as a script for now
