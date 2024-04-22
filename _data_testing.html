@@ -148,11 +148,12 @@
                 successors: "Task 2",
                 duration: 5
             };
-    
+            
             rowArray.push(tableInputRow);
-    
-            // Access the outputBox element and set its innerHTML
-            document.getElementById("outputBox").innerHTML = Object.values(rowArray[0]);
+            
+            for (let i=0; i<rowArray.length; i++)
+                // Access the outputBox element and set its innerHTML
+                document.getElementById("outputBox").innerHTML = Object.values(rowArray[i]);
         </script>
 
         <!--Mr Chicken said this is okay-->
