@@ -1,4 +1,5 @@
 // Class for TableInputRow
+// testing for devin
 class TableInputRow {
     constructor(name, predecessors, successors, duration, est, eft, lst, lft, slack) {
         this.id = TableInputRow.incrementId();
