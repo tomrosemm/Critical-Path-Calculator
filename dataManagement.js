@@ -26,7 +26,7 @@ class TableInputRow {
 const rowArray = [];
 
 // Create a new sample TableInputRow object
-const tableInputRow0 = new TableInputRow("", [""], [""], "", "", "", "", "", "");
+const tableInputRow0 = new TableInputRow("", ["---"], ["---"], "", "", "", "", "", "");
 
 // Push the TableInputRow object to the rowArray
 rowArray.push(tableInputRow0);
