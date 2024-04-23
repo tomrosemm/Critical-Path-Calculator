@@ -63,6 +63,8 @@ function updateOutputBox() {
     }
 }
 
+updateOutputBox(); // Initial update to output box
+
 // Access the outputBox element and set its innerHTML
 //const outputBox = document.getElementById("outputBox");
 //for (let i = 0; i < rowArray.length; i++) {
