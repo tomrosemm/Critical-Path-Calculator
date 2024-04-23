@@ -30,7 +30,7 @@ function calcest(arr, index) {
     arr[index].est = 0;
     return;
   }
-  let max = -9999;
+  let max = 0;
   // Loop through each other task
   for (let j = 0; j < arr.length; j++) {
     // If our task has that task as a predecessor
@@ -58,7 +58,7 @@ function calclft(arr, index) {
   //    arr[index].lft = arr[index].eft;
   //    return;
   //  }
-  let min = 9999;
+  let min = arr[index].eft;
   // Loop through each other task
   for (let j = 0; j < arr.length; j++) {
     // If our task has that task as a predecessor
@@ -69,5 +69,5 @@ function calclft(arr, index) {
       }
     }
   }
-  arr[index].lft = max;
+  arr[index].lft = min;
 }
