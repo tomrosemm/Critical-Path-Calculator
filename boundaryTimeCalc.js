@@ -30,7 +30,7 @@ function calcest(arr, index) {
     arr[index].est = 0;
     return;
   }
-  let max = -9999;
+  let max = 0;
   // Loop through each other task
   for (let j = 0; j < arr.length; j++) {
     // If our task has that task as a predecessor
