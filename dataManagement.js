@@ -16,7 +16,6 @@ class TableInputRow {
         this.slack = slack;
     }
 
-    // Gotta make sure the delete button lowers the latestId
     static incrementId() {
         TableInputRow.latestId++; // Increment latestId
         return TableInputRow.latestId;
@@ -39,6 +38,32 @@ document.getElementById("addButton").addEventListener("click", function() {
     updateOutputBox(); // Update the output box to display the new row
     bindEventListenersForRow(); // Bind event listeners for the new row
 });
+
+function deleteRow(button) {
+    const row = button.closest('tr'); // Get the closest row element
+    const rowIndex = row.rowIndex - 1; // Get the index of the row to delete
+
+    // Decrement IDs of all rows that come after the deleted row
+    for (let i = rowIndex + 1; i < rowArray.length; i++) {
+        rowArray[i].id--;
+    }
+
+    // Decrement latestId
+    TableInputRow.latestId--;
+
+    // Remove the row from the HTML table
+    row.remove();
+
+    // Remove the row name from options in predecessor and successor dropdowns
+    const deletedRowName = rowArray[rowIndex].name;
+    updateAllDropdownOptions();
+
+    // Remove the deleted row object from the rowArray
+    rowArray.splice(rowIndex, 1);
+
+    // Update output box
+    updateOutputBox();
+}
 
 // Function to bind event listeners for rows
 function bindEventListenersForRow() {
