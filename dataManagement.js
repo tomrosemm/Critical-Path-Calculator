@@ -54,12 +54,12 @@ function deleteRow(button) {
     // Remove the row from the HTML table
     row.remove();
 
+    // Remove the deleted row object from the rowArray
+    rowArray.splice(rowIndex, 1);
+
     // Remove the row name from options in predecessor and successor dropdowns
     const deletedRowName = rowArray[rowIndex].name;
     updateAllDropdownOptions();
-
-    // Remove the deleted row object from the rowArray
-    rowArray.splice(rowIndex, 1);
 
     // Update output box
     updateOutputBox();
@@ -78,25 +78,6 @@ function bindEventListenersForRow() {
 }
 
 bindEventListenersForRow(); // Initial event listeners bind
-
-// Function to update the options of predecessor and successor dropdowns
-function updateDropdownOptions(selector, value) {
-    const dropdowns = document.querySelectorAll(selector);
-    dropdowns.forEach((dropdown) => {
-        // Remove existing options with the same value
-        Array.from(dropdown.options).forEach((opt) => {
-            if (opt.value === value) {
-                dropdown.removeChild(opt);
-            }
-        });
-
-        // Add the new option
-        const option = document.createElement('option');
-        option.text = value;
-        option.value = value;
-        dropdown.add(option);
-    });
-}
 
 // Function to update TableInputRow object when input or select changes
 function updateTableRow(event) {
