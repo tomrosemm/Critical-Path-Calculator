@@ -68,50 +68,65 @@ function testing() {
     name: "Task 0",
     predecessors: [],
     successors: ["Task 1"],
-    duration: 2
+    duration: 2,
+    slack: 0
   };
   const task1 = {
     name: "Task 1",
     predecessors: ["Task 0"],
     successors: ["Task 2"],
-    duration: 5
+    duration: 5,
+    slack: 0,
   };
   const task2 = {
     name: "Task 2",
     predecessors: ["Task 1"],
     successors: [],
-    duration: 3
+    duration: 3,
+    slack: 0
   };
-  const tableRows = [task0, task1, task2]; // Encapsulate in array
+  const task3 = {
+    name: "Task 3",
+    predecessors: ["Task 1"],
+    successors: [],
+    duration: 2,
+    slack: 1,
+  }
+  const tableRows = [task0, task1, task2, task3]; // Encapsulate in array
   const g = newGraph(tableRows); // Run function
   g.printGraph();
   createGraph(tableRows);
 }
 
+// Returns a list of vertices formatted for gojs 
 function vertices(arr) {
   let output = [];
-  for (let i in arr) {
-    let currRow = arr[i];
-    let color = (currRow.slack == 0) ? "#F66" : "#FFF"
-    let currObj = {key: parseInt(i), text: currRow.name, color: color};
-    output.push(currObj);
+  for (const i in arr) { // Loop through each task
+    const currRow = arr[i];
+    // Set color to red if the task is on the critical path
+    const color = (currRow.slack == 0) ? "#F66" : "#FFF"
+    // Set up object for gojs
+    const currObj = {key: parseInt(i), text: currRow.name, color: color};
+    output.push(currObj); // Add object to list
   }
-  return output;
+  return output; // Return the list
 }
 
+// Returns a list of edges formatted for gojs
 function edges(arr) {
   let output = [];
-  let g = newGraph(arr);
-  for (const i in arr) {
-    let successors = g.adjList.get(arr[i].name);
-    for (const j in successors) {
-      s = successors[j];
-      index = arr.findIndex((elem) => elem.name == s);
-      currObj = {from: parseInt(i), to: index};
-      output.push(currObj);
+  const g = newGraph(arr); // Convert arr to a graph to better look at edges
+  for (const i in arr) { // Loop through each task
+    const successors = g.adjList.get(arr[i].name); // Get its successors
+    for (const j in successors) { // Loop through each successor
+      const s = successors[j];
+      const index = arr.findIndex((elem) => elem.name == s); // Find the successor's index
+      // TODO: Add text here for lead/lag time based on BTC calculations
+      const currObj = {from: parseInt(i), to: index}; // Format the edge between predecessor and successor properly
+      output.push(currObj); // Add object to list
     }
   }
-  return output;
+  return output; // Return the list
 }
 
 function createGraph(arr) {
@@ -130,7 +145,6 @@ function createGraph(arr) {
 
   // the Model holds only the essential information describing the diagram
   diagram.model = new go.GraphLinksModel(vertices(arr), edges(arr));
-  console.log(diagram.model);
 
   // enable Ctrl-Z to undo and Ctrl-Y to redo
   diagram.undoManager.isEnabled = true;
