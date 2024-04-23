@@ -42,7 +42,7 @@ function showSpinner() {
 
 //function deleteLogic(r) {
 //    var i = r.parentNode.parentNode.rowIndex;
-//    rowArray.pop(r);
+//    rowArray.splice(r, r + 1);
 
 //}
 
