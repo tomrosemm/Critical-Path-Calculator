@@ -1,6 +1,8 @@
 // Class for TableInputRow
 
 class TableInputRow {
+    static latestId = 0; // Initialize latestId
+
     constructor(name, predecessors, successors, duration, est, eft, lst, lft, slack) {
         this.id = TableInputRow.incrementId();
         this.name = name;
@@ -15,12 +17,8 @@ class TableInputRow {
     }
 
     static incrementId() {
-        if (!this.latestId) {
-            this.latestId = 0;
-        } else {
-            this.latestId++;
-        }
-        return this.latestId;
+        TableInputRow.latestId++; // Increment latestId
+        return TableInputRow.latestId;
     }
 }
 
