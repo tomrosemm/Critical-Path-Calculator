@@ -148,7 +148,7 @@ table.possibleInputTable, .possibleInputTable th, .possibleInputTable td {
 }
 
 .possibleInputTable th, .possibleInputTable td {
-    padding: 10px;
+    padding: 10px; /*Control height of table cells*/
 }
 
 /* Header */

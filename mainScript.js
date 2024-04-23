@@ -1,11 +1,10 @@
 // Delete Row Function
-
 function deleteRow(r) {
     var i = r.parentNode.parentNode.rowIndex;
     document.getElementById("myTable").deleteRow(i);
 }
 
-// Add Row Function
+// Add Row Function - JQuery
 $(document).ready(function(){
 
     function addNewRow() {
