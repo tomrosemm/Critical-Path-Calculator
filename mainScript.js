@@ -28,6 +28,17 @@ $(document).ready(function(){
     });
 });
 
+function showSpinner() {
+    // Get the spinner element
+    const spinner = document.querySelector('.spinner-grow');
+
+    // Make sure the spinner element exists
+    if (spinner) {
+        // Show the spinner by removing the 'd-none' class
+        spinner.classList.remove('d-none');
+    }
+}
+
 
 
 // IDK if it's obvious and I'm slow but I think using the clicking of the predecessor & successor dropdown menus as the 
