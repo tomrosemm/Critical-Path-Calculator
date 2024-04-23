@@ -61,7 +61,7 @@ function newGraph(tableRows) {
   return graph
 }
 
-function init() {
+function testing() {
   // Initialize table row sample data
   // TODO: Change these to user input
   const task0 = {
@@ -121,7 +121,7 @@ function edges(arr) {
     for (const j in successors) { // Loop through each successor
       const s = successors[j];
       const index = arr.findIndex((elem) => elem.name == s); // Find the successor's index
-      // TODO: Add text here for lead/lag time based on BTC calculations
+      // TODO: Add toggleable text here for lead/lag time based on BTC calculations
       const currObj = {from: parseInt(i), to: index}; // Format the edge between predecessor and successor properly
       output.push(currObj); // Add object to list
     }
@@ -129,6 +129,7 @@ function edges(arr) {
   return output; // Return the list
 }
 
+// TODO: Make this reliant on calculate button press that accepts user input
 function createGraph(arr) {
   let diagram = new go.Diagram("graph");
   // the node template describes how each Node should be constructed
@@ -150,5 +151,4 @@ function createGraph(arr) {
   diagram.undoManager.isEnabled = true;
 }
 
-// TODO: Make this reliant on calculate button press
-init(); // Run init as a script for now
+testing(); // Run testing as a script for now
