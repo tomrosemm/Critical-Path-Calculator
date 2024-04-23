@@ -53,11 +53,11 @@ function calclst(arr, index) {
 }
 
 function calclft(arr, index) {
-  // Set final activity LFT to be the EFT of the final task
-  if (index == arr.length - 1) {
-    arr[index].lft = arr[index].eft;
-    return;
-  }
+  // Set final activity LFT to be the EFT of the final task (They did this, but I don't think it's necessary)
+  //  if (index == arr.length - 1) {
+  //    arr[index].lft = arr[index].eft;
+  //    return;
+  //  }
   let min = 9999;
   // Loop through each other task
   for (let j = 0; j < arr.length; j++) {
