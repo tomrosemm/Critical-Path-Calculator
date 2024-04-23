@@ -30,11 +30,8 @@ const rowArray = [];
 // Create a new sample TableInputRow object
 const tableInputRow0 = new TableInputRow("", [""], [""], "", "", "", "", "", "");
 
-//const tableInputRow1 = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
-
 // Push the TableInputRow object to the rowArray
 rowArray.push(tableInputRow0);
-//rowArray.push(tableInputRow1);
 
 // Event listener for the "Add Row" button
 document.getElementById("addButton").addEventListener("click", function() {
@@ -44,31 +41,19 @@ document.getElementById("addButton").addEventListener("click", function() {
     bindEventListenersForRow(); // Bind event listeners for the new row
 });
 
-// Function to bind event listeners rows
+// Function to bind event listeners for rows
 function bindEventListenersForRow() {
-    const inputs = document.querySelectorAll('input[type="text"]');
-    const selects = document.querySelectorAll('select');
+    const table = document.querySelector('table.possibleInputTable');
 
-    inputs.forEach(input => {
-        input.addEventListener('input', updateTableRow);
-    });
-
-    selects.forEach(select => {
-        select.addEventListener('change', updateTableRow);
+    table.addEventListener('input', function(event) {
+        const target = event.target;
+        if (target.matches('input[type="text"]') || target.matches('select')) {
+            updateTableRow(event);
+        }
     });
 }
 
 bindEventListenersForRow();
-
-// Add event listeners to input elements
-//document.querySelectorAll('input[type="text"]').forEach(input => {
-//    input.addEventListener('input', updateTableRow);
-//});
-
-// Add event listeners to select elements
-//document.querySelectorAll('select').forEach(select => {
-//    select.addEventListener('change', updateTableRow);
-//});
 
 // Function to update TableInputRow object when input or select changes
 function updateTableRow(event) {
@@ -88,9 +73,3 @@ function updateOutputBox() {
 }
 
 updateOutputBox(); // Initial update to output box
-
-// Access the outputBox element and set its innerHTML
-//const outputBox = document.getElementById("outputBox");
-//for (let i = 0; i < rowArray.length; i++) {
-    outputBox.innerHTML += Object.values(rowArray[i]) + "<br>";
-//}
