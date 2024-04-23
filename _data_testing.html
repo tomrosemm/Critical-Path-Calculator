@@ -11,6 +11,7 @@
             }
 
         </style>
+
         
         <!--Jquery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -67,16 +68,14 @@
                         <input type="text" article class="form-control" placeholder="Name">
                     </td>
                     <td>
-                        <select class="form-select" placeholder="Predecessors">
-                            <option>---</option>
+                        <select class="form-select presuc-input" multiple>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                         </select>
                     </td>
                     <td>
-                        <select class="form-select" placeholder="Successors">
-                            <option>---</option>
+                        <select class="form-select presuc-input" multiple>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -105,11 +104,15 @@
 
                 <!-- Here is the calculate button, this should call the script to calculate everything -->
                 <div id="calculateicon">
-                    <button type="button" class="btn btn-primary btn-large" id="calculateButton">Calculate</button>
+                    <button type="button" class="btn btn-primary btn-large" id="calculateButton" onclick="showSpinner()">Calculate</button>
                 </div>
                 </a>
 
             </div>
+        </div>
+
+        <div class="center" style="margin: 1%;">
+            <div class="spinner-grow text-info d-none"></div>
         </div>
 
         <div class="center">

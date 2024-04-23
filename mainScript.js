@@ -10,8 +10,8 @@ $(document).ready(function(){
     function addNewRow() {
         var newRow = $("<tr>");
         newRow.append('<td><input type="text" article class="form-control" placeholder="Name"></td>');
-        newRow.append('<td><select class="form-select" placeholder="Predecessors"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
-        newRow.append('<td><select class="form-select" Placeholder="Successors"><option>---</option><option>1</option><option>2</option><option>3</option></select></td>');
+        newRow.append('<td><select class="form-select presuc-input" multiple><option>1</option><option>2</option><option>3</option></select></td>');
+        newRow.append('<td><select class="form-select presuc-input" multiple><option>1</option><option>2</option><option>3</option></select></td>');
         newRow.append('<td><input type="text" class="form-control" placeholder="Duration"></td>');
         newRow.append('<td><input type="text" class="form-control" placeholder="EST" disabled></td>');
         newRow.append('<td><input type="text" class="form-control" placeholder="EFT" disabled></td>');
@@ -27,6 +27,17 @@ $(document).ready(function(){
         addNewRow();
     });
 });
+
+function showSpinner() {
+    // Get the spinner element
+    const spinner = document.querySelector('.spinner-grow');
+
+    // Make sure the spinner element exists
+    if (spinner) {
+        // Show the spinner by removing the 'd-none' class
+        spinner.classList.remove('d-none');
+    }
+}
 
 
 
