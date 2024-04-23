@@ -92,7 +92,7 @@ function vertices(arr) {
   let output = [];
   for (let i in arr) {
     let currRow = arr[i];
-    let color = (currRow.slack == 0) ? "#900" : "#FFF"
+    let color = (currRow.slack == 0) ? "#F66" : "#FFF"
     let currObj = {key: parseInt(i), text: currRow.name, color: color};
     output.push(currObj);
   }
