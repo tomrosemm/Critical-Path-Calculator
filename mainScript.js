@@ -40,6 +40,12 @@ function showSpinner() {
     }
 }
 
+//function deleteLogic(r) {
+//    var i = r.parentNode.parentNode.rowIndex;
+//    rowArray.splice(r, r + 1);
+
+//}
+
 
 
 // IDK if it's obvious and I'm slow but I think using the clicking of the predecessor & successor dropdown menus as the 
