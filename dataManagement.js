@@ -51,15 +51,70 @@ function bindEventListenersForRow() {
     });
 }
 
-bindEventListenersForRow();
+bindEventListenersForRow(); // Initial event listeners bind
+
+// Function to update the options of predecessor and successor dropdowns
+function updateDropdownOptions(selector, value) {
+    const dropdowns = document.querySelectorAll(selector);
+    dropdowns.forEach((dropdown) => {
+        // Remove existing options with the same value
+        Array.from(dropdown.options).forEach((opt) => {
+            if (opt.value === value) {
+                dropdown.removeChild(opt);
+            }
+        });
+
+        // Add the new option
+        const option = document.createElement('option');
+        option.text = value;
+        option.value = value;
+        dropdown.add(option);
+    });
+}
 
 // Function to update TableInputRow object when input or select changes
 function updateTableRow(event) {
     const inputElement = event.target;
     const rowIndex = inputElement.parentElement.parentElement.rowIndex - 1; // Get row index
-    const property = inputElement.getAttribute('placeholder'); // Get property name from placeholder
-    rowArray[rowIndex][property.toLowerCase()] = inputElement.value; // Update TableInputRow object
+    const placeholder = inputElement.getAttribute('placeholder'); // Get placeholder value
+    const value = inputElement.value; // Get input value
+
+    if (placeholder === 'Name') {
+        // Update the name of the row
+        rowArray[rowIndex].name = value;
+        // Update the options of predecessor and successor dropdowns for all rows
+        updateAllDropdownOptions();
+    } else {
+        // Update other properties
+        rowArray[rowIndex][placeholder.toLowerCase()] = value;
+    }
+
     updateOutputBox(); // Update output box
+}
+
+// Function to update the options of predecessor and successor dropdowns for all rows
+function updateAllDropdownOptions() {
+    const names = rowArray.map(row => row.name); // Get all names
+
+    // Update the options of predecessor and successor dropdowns for all rows
+    const dropdowns = document.querySelectorAll('.presuc-input');
+    dropdowns.forEach((dropdown) => {
+        updateDropdownOptions(dropdown, names);
+    });
+}
+
+// Function to update the options of a specific dropdown
+function updateDropdownOptions(dropdown, names) {
+    // Clear existing options
+    dropdown.innerHTML = '<option>---</option>';
+
+    // Add options for all names
+    names.forEach((name) => {
+        const option = document.createElement('option');
+        option.text = name;
+        option.value = name;
+        dropdown.add(option);
+    });
 }
 
 // Function to update output box
