@@ -16,6 +16,7 @@ class TableInputRow {
         this.slack = slack;
     }
 
+    // Gotta make sure the delete button lowers the latestId
     static incrementId() {
         TableInputRow.latestId++; // Increment latestId
         return TableInputRow.latestId;
