@@ -28,7 +28,7 @@ class TableInputRow {
 const rowArray = [];
 
 // Create a new sample TableInputRow object
-const tableInputRow0 = new TableInputRow("Task 2", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
+const tableInputRow0 = new TableInputRow("", [""], [""], "", "", "", "", "", "");
 
 const tableInputRow1 = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
 
@@ -36,8 +36,35 @@ const tableInputRow1 = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, ""
 rowArray.push(tableInputRow0);
 rowArray.push(tableInputRow1);
 
-// Access the outputBox element and set its innerHTML
-const outputBox = document.getElementById("outputBox");
-for (let i = 0; i < rowArray.length; i++) {
-    outputBox.innerHTML += Object.values(rowArray[i]) + "<br>";
+// Add event listeners to input elements
+document.querySelectorAll('input[type="text"]').forEach(input => {
+    input.addEventListener('input', updateTableRow);
+});
+
+// Add event listeners to select elements
+document.querySelectorAll('select').forEach(select => {
+    select.addEventListener('change', updateTableRow);
+});
+
+// Function to update TableInputRow object when input or select changes
+function updateTableRow(event) {
+    const inputElement = event.target;
+    const rowIndex = inputElement.parentElement.parentElement.rowIndex - 1; // Get row index
+    const property = inputElement.getAttribute('placeholder'); // Get property name from placeholder
+    rowArray[rowIndex][property.toLowerCase()] = inputElement.value; // Update TableInputRow object
+    updateOutputBox(); // Update output box
 }
+
+// Function to update output box
+function updateOutputBox() {
+    outputBox.innerHTML = ""; // Clear output box
+    for (let i = 0; i < rowArray.length; i++) {
+        outputBox.innerHTML += Object.values(rowArray[i]) + "<br>"; // Update output box with latest data
+    }
+}
+
+// Access the outputBox element and set its innerHTML
+//const outputBox = document.getElementById("outputBox");
+//for (let i = 0; i < rowArray.length; i++) {
+    outputBox.innerHTML += Object.values(rowArray[i]) + "<br>";
+//}
