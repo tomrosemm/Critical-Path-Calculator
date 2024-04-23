@@ -1,7 +1,7 @@
 // Class for TableInputRow
 
 class TableInputRow {
-    static latestId = 0; // Initialize latestId
+    static latestId = -1; // Initialize latestId
 
     constructor(name, predecessors, successors, duration, est, eft, lst, lft, slack) {
         this.id = TableInputRow.incrementId();
@@ -16,6 +16,7 @@ class TableInputRow {
         this.slack = slack;
     }
 
+    // Gotta make sure the delete button lowers the latestId
     static incrementId() {
         TableInputRow.latestId++; // Increment latestId
         return TableInputRow.latestId;

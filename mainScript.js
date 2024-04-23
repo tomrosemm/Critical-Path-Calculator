@@ -1,10 +1,11 @@
-// Delete Row Button
+// Delete Row Function
 
 function deleteRow(r) {
     var i = r.parentNode.parentNode.rowIndex;
     document.getElementById("myTable").deleteRow(i);
 }
 
+// Add Row Function
 $(document).ready(function(){
 
     function addNewRow() {
@@ -12,7 +13,7 @@ $(document).ready(function(){
         newRow.append('<td><input type="text" article class="form-control" placeholder="Name"></td>');
         newRow.append('<td><select class="form-select presuc-input" placeholder="Predecessors" multiple><option>---</option></select></td>');
         newRow.append('<td><select class="form-select presuc-input" placeholder="Successors" multiple><option>---</option></select></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="Duration"></td>');
+        newRow.append('<td><input type="text" class="form-control" placeholder="Duration" size="6"></td>');
         newRow.append('<td><input type="text" class="form-control" placeholder="EST" disabled></td>');
         newRow.append('<td><input type="text" class="form-control" placeholder="EFT" disabled></td>');
         newRow.append('<td><input type="text" class="form-control" placeholder="LST" disabled></td>');

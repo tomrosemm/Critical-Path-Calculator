@@ -41,8 +41,6 @@
         If the specific object already exists, we need to update it with the new details. If it doesn't already exist, we need to create a new object with it's details. In order to allow for this updating, we probably need to implement a counter system of 
         some sort as well to add an index to the row objects and allow us to update the rows while still checking against same named rows. This should allow us to also populate the predecessor and successor tables by just selecting those values from those fields in 
         all of the row objects, possibly filtered by location on table as proposed if we decide to go with that. In this system the delete button would also need to not only delete the row and associated object, but also shift the index of all following row objects in the table-->
-        
-        <!--Multiple Select Options - Tweak looks and get rid of display-->
 
         <!--Events we should consider triggers for updating this set of arrays: Clicking on dropdown for either predecessor 
         or successor; clicking add row button; Clicking Delete Row Button; Clicking Calculate Button; Form change -->
@@ -65,7 +63,7 @@
                         <input type="text" article class="form-control" placeholder="Name">
                     </td>
                     <td>
-                        <select class="form-select">
+                        <select class="form-select presuc-input" multiple>
                             <option>---</option>
                             <option>1</option>
                             <option>2</option>
@@ -73,14 +71,14 @@
                         </select>
                     </td>
                     <td>
-                        <select class="form-select">
+                        <select class="form-select presuc-input" multiple>
                             <option>---</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                         </select>
                     </td>
-                    <td><input type="text" class="form-control" placeholder="Duration"></td>
+                    <td><input type="text" class="form-control" placeholder="Duration" size="6"></td>
                     <td><input type="text" class="form-control" placeholder="EST" disabled></td>
                     <td><input type="text" class="form-control" placeholder="EFT" disabled></td>
                     <td><input type="text" class="form-control" placeholder="LST" disabled></td>
@@ -93,7 +91,7 @@
                         <input type="text" article class="form-control" placeholder="Name">
                     </td>
                     <td>
-                        <select class="form-select">
+                        <select class="form-select presuc-input" multiple>
                             <option>---</option>
                             <option>1</option>
                             <option>2</option>
@@ -101,14 +99,14 @@
                         </select>
                     </td>
                     <td>
-                        <select class="form-select">
+                        <select class="form-select presuc-input" multiple>
                             <option>---</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                         </select>
                     </td>
-                    <td><input type="text" class="form-control" placeholder="Duration"></td>
+                    <td><input type="text" class="form-control" placeholder="Duration" size="6"></td>
                     <td><input type="text" class="form-control" placeholder="EST" disabled></td>
                     <td><input type="text" class="form-control" placeholder="EFT" disabled></td>
                     <td><input type="text" class="form-control" placeholder="LST" disabled></td>
