@@ -40,8 +40,8 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
+}
+
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -49,22 +49,22 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
+}
+
 /* The Close Button */
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
+}
+
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
 .scrolling-wrapper {
     overflow-x: scroll;
@@ -72,11 +72,11 @@
     white-space: nowrap;
     width: 75%;
     margin: auto;
-  
+
     .card {
-      display: inline-block;
+        display: inline-block;
     }
-  }
+}
 
 .toggle-container {
     position: relative;
@@ -181,39 +181,39 @@ table.possibleInputTable, .possibleInputTable th, .possibleInputTable td {
 }
 
 .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 120px;
-        overflow-y: auto;
-        max-height: 100px;
-        border: 1px solid #ddd;
-        z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 120px;
+    overflow-y: auto;
+    max-height: 100px;
+    border: 1px solid #ddd;
+    z-index: 1;
 }
 
 .dropdown-content label {
-        display: block;
-        padding: 5px 10px;
-        cursor: pointer;
+    display: block;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 .dropdown-content label:hover {
-        background-color: #ddd;
+    background-color: #ddd;
 }
 
 .show {
-        display: block;
+    display: block;
 }
 
 .selected-items {
-        width:100px;
-        margin-top: 5px;
-        padding: 5px;
-        border: 1px solid #ccc;
+    width:100px;
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
 }
 
 .selected-items div {
-        margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 ul {
@@ -222,21 +222,25 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    }
+}
 
-    li {
+li {
     float: left;
-    }
+}
 
-    li a {
+li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    }
+}
 
-    /* Change the link color to #111 (black) on hover */
-    li a:hover {
+/* Change the link color to #111 (black) on hover */
+li a:hover {
     background-color: #111;
-    }
+}
+
+.presuc-input {
+    max-height: 40px;
+}
