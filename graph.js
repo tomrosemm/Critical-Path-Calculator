@@ -85,9 +85,36 @@ function testing() {
   const tableRows = [task0, task1, task2]; // Encapsulate in array
   const g = newGraph(tableRows); // Run function
   g.printGraph();
+  createGraph(tableRows);
 }
 
-function createGraph() {
+function vertices(arr) {
+  let output = [];
+  for (let i in arr) {
+    let currRow = arr[i];
+    let color = (currRow.slack == 0) ? "#900" : "#FFF"
+    let currObj = {key: parseInt(i), text: currRow.name, color: color};
+    output.push(currObj);
+  }
+  return output;
+}
+
+function edges(arr) {
+  let output = [];
+  let g = newGraph(arr);
+  for (const i in arr) {
+    let successors = g.adjList.get(arr[i].name);
+    for (const j in successors) {
+      s = successors[j];
+      index = arr.findIndex((elem) => elem.name == s);
+      currObj = {from: parseInt(i), to: index};
+      output.push(currObj);
+    }
+  }
+  return output;
+}
+
+function createGraph(arr) {
   let diagram = new go.Diagram("graph");
   // the node template describes how each Node should be constructed
   diagram.nodeTemplate =
@@ -102,29 +129,12 @@ function createGraph() {
       );
 
   // the Model holds only the essential information describing the diagram
-  diagram.model = new go.GraphLinksModel(
-    // TODO: Make this vertices on a graph, where vertices in the critical path are highlighted red
-    [ // a JavaScript Array of JavaScript objects, one per node;
-      // the "color" property is added specifically for this app
-      { key: 1, text: "Alpha", color: "lightblue" },
-      { key: 2, text: "Beta", color: "orange" },
-      { key: 3, text: "Gamma", color: "lightgreen" },
-      { key: 4, text: "Delta", color: "pink" }
-    ],
-    // TODO: Make this edges on a graph
-    [ // a JavaScript Array of JavaScript objects, one per link
-      { from: 1, to: 2 },
-      { from: 1, to: 3 },
-      { from: 2, to: 2 },
-      { from: 3, to: 4 },
-      { from: 4, to: 1 }
-    ]);
+  diagram.model = new go.GraphLinksModel(vertices(arr), edges(arr));
+  console.log(diagram.model);
 
   // enable Ctrl-Z to undo and Ctrl-Y to redo
   diagram.undoManager.isEnabled = true;
 }
 
-// TODO: Remove this call later
-//testing(); // Run testing as a script for now
 // TODO: Make this reliant on calculate button press
-createGraph();
+testing(); // Run testing as a script for now
