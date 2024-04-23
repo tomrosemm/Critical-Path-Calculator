@@ -30,21 +30,45 @@ const rowArray = [];
 // Create a new sample TableInputRow object
 const tableInputRow0 = new TableInputRow("", [""], [""], "", "", "", "", "", "");
 
-const tableInputRow1 = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
+//const tableInputRow1 = new TableInputRow("Task 1", ["Task 0"], ["Task 2"], 5, "", "", "", "", "");
 
 // Push the TableInputRow object to the rowArray
 rowArray.push(tableInputRow0);
-rowArray.push(tableInputRow1);
+//rowArray.push(tableInputRow1);
+
+// Event listener for the "Add Row" button
+document.getElementById("addButton").addEventListener("click", function() {
+    const newRow = new TableInputRow("", ["---"], ["---"], "", "", "", "", "", "");
+    rowArray.push(newRow); // Push the new TableInputRow object to the rowArray
+    updateOutputBox(); // Update the output box to display the new row
+    bindEventListenersForRow(); // Bind event listeners for the new row
+});
+
+// Function to bind event listeners rows
+function bindEventListenersForRow() {
+    const inputs = document.querySelectorAll('input[type="text"]');
+    const selects = document.querySelectorAll('select');
+
+    inputs.forEach(input => {
+        input.addEventListener('input', updateTableRow);
+    });
+
+    selects.forEach(select => {
+        select.addEventListener('change', updateTableRow);
+    });
+}
+
+bindEventListenersForRow();
 
 // Add event listeners to input elements
-document.querySelectorAll('input[type="text"]').forEach(input => {
-    input.addEventListener('input', updateTableRow);
-});
+//document.querySelectorAll('input[type="text"]').forEach(input => {
+//    input.addEventListener('input', updateTableRow);
+//});
 
 // Add event listeners to select elements
-document.querySelectorAll('select').forEach(select => {
-    select.addEventListener('change', updateTableRow);
-});
+//document.querySelectorAll('select').forEach(select => {
+//    select.addEventListener('change', updateTableRow);
+//});
 
 // Function to update TableInputRow object when input or select changes
 function updateTableRow(event) {
