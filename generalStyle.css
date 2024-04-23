@@ -30,25 +30,35 @@
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
+    /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -81,8 +91,10 @@
 .toggle-container {
     position: relative;
     display: inline-block;
-    width: 50px; /* adjust width as needed */
-    height: 170px; /* adjust height as needed */
+    width: 50px;
+    /* adjust width as needed */
+    height: 170px;
+    /* adjust height as needed */
 }
 
 .toggle {
@@ -92,7 +104,8 @@
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    border-radius: 25px; /* make it round */
+    border-radius: 25px;
+    /* make it round */
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -100,12 +113,17 @@
 .toggle:before {
     content: "";
     position: absolute;
-    width: 40px; /* width of the toggle */
-    height: 40px; /* height of the toggle */
+    width: 40px;
+    /* width of the toggle */
+    height: 40px;
+    /* height of the toggle */
     background-color: white;
-    border-radius: 50%; /* make it round */
-    top: 5px; /* adjust top position */
-    left: 5px; /* adjust left position */
+    border-radius: 50%;
+    /* make it round */
+    top: 5px;
+    /* adjust top position */
+    left: 5px;
+    /* adjust left position */
     transition: transform 0.3s;
 }
 
@@ -113,12 +131,14 @@ input[type="checkbox"] {
     display: none;
 }
 
-input[type="checkbox"]:checked + .toggle {
-    background-color: #00274c; /* change background color when checked */
+input[type="checkbox"]:checked+.toggle {
+    background-color: #00274c;
+    /* change background color when checked */
 }
 
-input[type="checkbox"]:checked + .toggle:before {
-    transform: translateY(300%); /* move toggle down when checked */
+input[type="checkbox"]:checked+.toggle:before {
+    transform: translateY(300%);
+    /* move toggle down when checked */
 }
 
 .backbutton {
@@ -148,7 +168,8 @@ table.possibleInputTable, .possibleInputTable th, .possibleInputTable td {
 }
 
 .possibleInputTable th, .possibleInputTable td {
-    padding: 10px; /*Control height of table cells*/
+    padding: 10px;
+    /*Control height of table cells*/
 }
 
 /* Header */
@@ -206,7 +227,7 @@ table.possibleInputTable, .possibleInputTable th, .possibleInputTable td {
 }
 
 .selected-items {
-    width:100px;
+    width: 100px;
     margin-top: 5px;
     padding: 5px;
     border: 1px solid #ccc;
