@@ -54,7 +54,7 @@ function calclst(arr, index) {
 
 function calclft(arr, index) {
   // Set final activity LFT to be the EFT of the final task
-  if (index == 0) {
+  if (index == arr.length - 1) {
     arr[index].lft = arr[index].eft;
     return;
   }
