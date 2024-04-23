@@ -1,5 +1,11 @@
+function calcbtc(arr) {
+  calcestandeft(arr)
+  calclstandlft(arr)
+  calcslack(arr)
+}
+
 function calcestandeft(arr) {
-  for (let i = 0; i <= arr; i++) {
+  for (let i = 0; i < arr.length; i++) {
     calcest(arr, i);
     calceft(arr, i);
   }
@@ -12,6 +18,12 @@ function calclstandlft(arr) {
   }
 }
 
+function calcslack(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].slack = arr.lst - arr.est;
+  }
+}
+
 function calcest(arr, index) {
   // Set initial activity est to 0
   if (index == 0) {
@@ -20,7 +32,7 @@ function calcest(arr, index) {
   }
   let max = -9999;
   // Loop through each other task
-  for (let j = 0; j <= arr.length; j++) {
+  for (let j = 0; j < arr.length; j++) {
     // If our task has that task as a predecessor
     if (arr[index].predecessors.includes(arr[j].name)) {
       if (arr[j].eft > max) { // Set the new EST to that task's EFT
@@ -48,7 +60,7 @@ function calclft(arr, index) {
   }
   let min = 9999;
   // Loop through each other task
-  for (let j = 0; j <= arr.length; j++) {
+  for (let j = 0; j < arr.length; j++) {
     // If our task has that task as a predecessor
     if (arr[index].successors.includes(arr[j].name)) {
       if (arr[j].lst < min) { // Set the new EST to that task's EFT
