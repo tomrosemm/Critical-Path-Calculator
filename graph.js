@@ -61,7 +61,7 @@ function newGraph(tableRows) {
   return graph
 }
 
-function testing() {
+function init() {
   // Initialize table row sample data
   // TODO: Change these to user input
   const task0 = {
@@ -151,4 +151,4 @@ function createGraph(arr) {
 }
 
 // TODO: Make this reliant on calculate button press
-testing(); // Run testing as a script for now
+init(); // Run init as a script for now
