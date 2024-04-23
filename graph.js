@@ -63,7 +63,7 @@ function newGraph(tableRows) {
 
 function testing() {
   // Initialize table row sample data
-  // TODO: Change these to user input
+  // Change these to user input, this is just a sample for how to use the functions
   const task0 = {
     name: "Task 0",
     predecessors: [],
