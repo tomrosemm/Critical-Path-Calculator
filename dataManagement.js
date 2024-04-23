@@ -58,7 +58,7 @@ function deleteRow(button) {
     rowArray.splice(rowIndex, 1);
 
     // Remove the row name from options in predecessor and successor dropdowns
-    const deletedRowName = rowArray[rowIndex].name;
+    //const deletedRowName = rowArray[rowIndex].name;       <-- (This is unnecessary, made it cuz I thought I would need it, keeping for now)
     updateAllDropdownOptions();
 
     // Update output box
