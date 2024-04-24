@@ -116,7 +116,7 @@ function updateAllDropdownOptions() {
     dropdowns.forEach((dropdown) => {
         updateDropdownOptions(dropdown, names);
     });
-}//bob
+}
 
 // Function to update the options of a specific dropdown
 function updateDropdownOptions(dropdown, names) {
