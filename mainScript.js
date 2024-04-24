@@ -12,7 +12,7 @@ $(document).ready(function(){
         newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></div></td>');
         newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></div></td>');
         newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></div></td>');
-        newRow.append('<td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>');
+        newRow.append('<td><input type="button" class="btn btn-danger" style="height: 50px;" value="Delete Row" onclick="deleteRow(this)"></td>');
         
         $(".possibleInputTable").append(newRow);
     }
