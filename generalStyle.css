@@ -103,7 +103,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #00274c;
+    /* change background color for unchecked state */
     border-radius: 25px;
     /* make it round */
     cursor: pointer;
@@ -131,12 +132,12 @@ input[type="checkbox"] {
     display: none;
 }
 
-input[type="checkbox"]:checked+.toggle {
-    background-color: #00274c;
+input[type="checkbox"]:checked + .toggle {
+    background-color: #ccc;
     /* change background color when checked */
 }
 
-input[type="checkbox"]:checked+.toggle:before {
+input[type="checkbox"]:checked + .toggle:before {
     transform: translateY(300%);
     /* move toggle down when checked */
 }

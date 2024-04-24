@@ -1,4 +1,4 @@
-// Add Row Function
+// Add Row Function - make sure it matches working table rows to ensure synchronization between original rows and added rows
 $(document).ready(function(){
 
     function addNewRow() {
@@ -13,9 +13,6 @@ $(document).ready(function(){
         newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></div></td>');
         newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></div></td>');
         newRow.append('<td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>');
-
-        
-        
         
         $(".possibleInputTable").append(newRow);
     }
@@ -25,6 +22,7 @@ $(document).ready(function(){
     });
 });
 
+// Loading Spinner called on calculate button press
 function showSpinner() {
     // Get the spinner element
     const spinner = document.querySelector('.spinner-grow');
@@ -36,17 +34,17 @@ function showSpinner() {
     }
 }
 
+// Listener for toggle switch
 const toggleSwitch = document.getElementById('toggle');
 const toggleLabel = document.getElementById('toggle-label');
 
 toggleSwitch.addEventListener('change', function() {
-    if (this.checked) {
-        console.log('Toggle is ON');
-    } else {
+    // OFF
+    if (this.checked) { 
         console.log('Toggle is OFF');
+    } 
+    // ON
+    else {
+        console.log('Toggle is ON');
     }
 });
-
-
-// IDK if it's obvious and I'm slow but I think using the clicking of the predecessor & successor dropdown menus as the 
-// trigger to gather the appropriate elements to populate the menu would be a good methodology
