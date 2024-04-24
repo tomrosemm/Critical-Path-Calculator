@@ -4,8 +4,8 @@ $(document).ready(function(){
     function addNewRow() {
         var newRow = $("<tr>");
         newRow.append('<td><input type="text" class="form-control form-control-lg name-input" placeholder="Name" size="15"></td>');
-        newRow.append('<td><select class="form-select presuc-input predecessor" placeholder="Predecessors" multiple><option></option></select></td>');
-        newRow.append('<td><select class="form-select presuc-input successor" placeholder="Successors" multiple><option></option></select></td>');
+        newRow.append('<td><select name="successors" class="form-select presuc-input predecessor" placeholder="Predecessors" multiple><option></option></select></td>');
+        newRow.append('<td><select name="successors" class="form-select presuc-input successor" placeholder="Successors" multiple><option></option></select></td>');
         newRow.append('<td><input type="text" class="form-control form-control-lg" placeholder="Duration" size="7"></td>');
         newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></div></td>');
         newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></div></td>');
