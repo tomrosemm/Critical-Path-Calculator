@@ -263,5 +263,9 @@ li a:hover {
 }
 
 .presuc-input {
-    max-height: 40px;
+    max-height: 70px;
+}
+
+.table-input {
+    line-height: 2em;
 }

@@ -3,16 +3,18 @@ $(document).ready(function(){
 
     function addNewRow() {
         var newRow = $("<tr>");
-        newRow.append('<td><input type="text" class="form-control name-input" placeholder="Name"></td>');
+        newRow.append('<td><input type="text" class="form-control form-control-lg name-input" placeholder="Name" size="15"></td>');
         newRow.append('<td><select class="form-select presuc-input predecessor" placeholder="Predecessors" multiple><option>---</option></select></td>');
         newRow.append('<td><select class="form-select presuc-input successor" placeholder="Successors" multiple><option>---</option></select></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="Duration" size="6"></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="EST" disabled></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="EFT" disabled></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="LST" disabled></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="LFT" disabled></td>');
-        newRow.append('<td><input type="text" class="form-control" placeholder="Slack" disabled></td>');
+        newRow.append('<td><input type="text" class="form-control form-control-lg" placeholder="Duration" size="7"></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 100px; height: 50px"></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></td>');
         newRow.append('<td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>');
+
+        
         
         $(".possibleInputTable").append(newRow);
     }
