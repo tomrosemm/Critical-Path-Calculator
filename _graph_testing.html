@@ -47,75 +47,42 @@
   <div class="scrollATable">
     <table class="possibleInputTable" id="myTable">
       <tr>
-        <th>Name</th>
-        <th>Predecessors</th>
-        <th>Successors</th>
-        <th>Duration</th>
-        <th>EST</th>
-        <th>EFT</th>
-        <th>LST</th>
-        <th>LFT</th>
-        <th>Slack Time</th>
-        <th>Delete Row</th>
-      </tr>
+        <th style="width: 14%;">Name</th>
+        <th style="width: 14%;">Predecessors</th>
+        <th style="width: 14%;">Successors</th>
+        <th style="width: 10%;">Duration</th>
+        <th style="width: 8%;">EST</th>
+        <th style="width: 8%;">EFT</th>
+        <th style="width: 8%;">LST</th>
+        <th style="width: 8%;">LFT</th>
+        <th style="width: 8%;">Slack Time</th>
+        <th style="width: 8%;">Delete Row</th>
+    </tr>
       <tr>
-        <td>
-          <input type="text" article class="form-control" placeholder="Name">
-        </td>
-        <td>
-          <select class="form-select presuc-input" multiple>
-            <option>---</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </td>
-        <td>
-          <select class="form-select presuc-input" multiple>
-            <option>---</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </td>
-        <td><input type="text" class="form-control" placeholder="Duration" size="6"></td>
-        <td><input type="text" class="form-control" placeholder="EST" disabled></td>
-        <td><input type="text" class="form-control" placeholder="EFT" disabled></td>
-        <td><input type="text" class="form-control" placeholder="LST" disabled></td>
-        <td><input type="text" class="form-control" placeholder="LFT" disabled></td>
-        <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
-        <td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>
-      </tr>
-      <tr>
-        <td>
-          <input type="text" article class="form-control" placeholder="Name">
-        </td>
-        <td>
-          <select class="form-select presuc-input" multiple>
-            <option>---</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </td>
-        <td>
-          <select class="form-select presuc-input" multiple>
-            <option>---</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </td>
-        <td><input type="text" class="form-control" placeholder="Duration" size="6"></td>
-        <td><input type="text" class="form-control" placeholder="EST" disabled></td>
-        <td><input type="text" class="form-control" placeholder="EFT" disabled></td>
-        <td><input type="text" class="form-control" placeholder="LST" disabled></td>
-        <td><input type="text" class="form-control" placeholder="LFT" disabled></td>
-        <td><input type="text" class="form-control" placeholder="Slack" disabled></td>
-        <td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>
+          <td>
+              <input type="text" class="form-control form-control-lg name-input" placeholder="Name" size="15">
+          </td>
+          <td>
+              <select class="form-select presuc-input predecessor" name="predecessors[]" placeholder="Predecessors" multiple="MULTIPLE">
+                  <option></option>
+              </select>
+          </td>
+          <td>
+              <select class="form-select presuc-input successor" name="successors[]" placeholder="Successors" multiple="MULTIPLE">
+                  <option></option>
+              </select>
+          </td>
+          <td><input type="text" class="form-control form-control-lg" placeholder="Duration" size="7"></td>
+          <td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></td>
+          <td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></td>
+          <td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></td>
+          <td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></td>
+          <td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></td>
+          <td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td> <!--deleteLogic(this)-->
       </tr>
 
-    </table>
+      
+  </table>
 
   </div>
 
