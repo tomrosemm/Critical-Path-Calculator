@@ -151,4 +151,4 @@ function createGraph(arr) {
   diagram.undoManager.isEnabled = true;
 }
 
-testing(); // Run testing as a script for now
+//testing(); // Run testing as a script for now
