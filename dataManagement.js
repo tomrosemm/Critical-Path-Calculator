@@ -43,7 +43,9 @@ document.getElementById("addButton").addEventListener("click", function() {
 function calculate() {
     calcbtc(rowArray);
     createGraph(rowArray);
+    updateOutputBox();
 }
+
 // Delete row functionality
 function deleteRow(button) {
     const row = button.closest('tr'); // Get the closest row element
