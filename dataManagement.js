@@ -26,14 +26,14 @@ class TableInputRow {
 const rowArray = [];
 
 // Create a new sample TableInputRow object
-const tableInputRow0 = new TableInputRow("", ["---"], ["---"], "", "", "", "", "", "");
+const tableInputRow0 = new TableInputRow("", [""], [""], "", "", "", "", "", "");
 
 // Push the TableInputRow object to the rowArray
 rowArray.push(tableInputRow0);
 
 // Event listener for the "Add Row" button
 document.getElementById("addButton").addEventListener("click", function() {
-    const newRow = new TableInputRow("", ["---"], ["---"], "", "", "", "", "", "");
+    const newRow = new TableInputRow("", [""], [""], "", "", "", "", "", "");
     rowArray.push(newRow); // Push the new TableInputRow object to the rowArray
     updateOutputBox(); // Update the output box to display the new row
     bindEventListenersForRow(); // Bind event listeners for the new row
@@ -121,7 +121,7 @@ function updateAllDropdownOptions() {
 // Function to update the options of a specific dropdown
 function updateDropdownOptions(dropdown, names) {
     // Clear existing options
-    dropdown.innerHTML = '<option>---</option>';
+    dropdown.innerHTML = '<option></option>';
 
     // Add options for all names
     names.forEach((name) => {
