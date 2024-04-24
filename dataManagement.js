@@ -3,7 +3,7 @@
 class TableInputRow {
     static latestId = -1; // Initialize latestId
 
-    constructor(name, predecessors, successors, duration, est, eft, lst, lft, slack) {
+    constructor(name, predecessors = [], successors = [], duration, est, eft, lst, lft, slack) {
         this.id = TableInputRow.incrementId();
         this.name = name;
         this.predecessors = predecessors;
