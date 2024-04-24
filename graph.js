@@ -131,7 +131,7 @@ function edges(arr) {
 
 // TODO: Make this reliant on calculate button press that accepts user input
 function createGraph(arr) {
-  let diagram = new go.Diagram("graph2");
+  let diagram = new go.Diagram("graph");
   // the node template describes how each Node should be constructed
   diagram.nodeTemplate =
     new go.Node("Auto")
