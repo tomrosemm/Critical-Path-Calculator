@@ -41,10 +41,20 @@ const toggleLabel = document.getElementById('toggle-label');
 toggleSwitch.addEventListener('change', function() {
     // OFF
     if (this.checked) { 
-        console.log('Toggle is OFF');
+        toggleOff()
     } 
     // ON
     else {
-        console.log('Toggle is ON');
+        toggleOn();
     }
 });
+
+// Toggle Switch On Function
+function toggleOn() {
+    console.log('Toggle is ON');
+}
+
+// Toggle Switch Off Function
+function toggleOff() {
+    console.log('Toggle is OFF');
+}
