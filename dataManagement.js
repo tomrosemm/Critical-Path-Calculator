@@ -35,7 +35,7 @@ rowArray.push(tableInputRow0);
 document.getElementById("addButton").addEventListener("click", function() {
     const newRow = new TableInputRow("", [""], [""], "", "", "", "", "", "");
     rowArray.push(newRow); // Push the new TableInputRow object to the rowArray
-    updateOutputBox(); // Update the output box to display the new row
+    updateTable(); // Update the table to display the new row
     bindEventListenersForRow(); // Bind event listeners for the new row
 });
 
@@ -43,7 +43,7 @@ document.getElementById("addButton").addEventListener("click", function() {
 function calculate() {
     calcbtc(rowArray);
     createGraph(rowArray);
-    updateOutputBox();
+    updateTable();
 }
 
 // Delete row functionality
@@ -69,8 +69,8 @@ function deleteRow(button) {
     //const deletedRowName = rowArray[rowIndex].name;       <-- (This is unnecessary, made it cuz I thought I would need it, keeping for now)
     updateAllDropdownOptions();
 
-    // Update output box
-    updateOutputBox();
+    // Update table
+    updateTable();
 }
 
 // Function to bind event listeners for rows
@@ -112,7 +112,7 @@ function updateTableRow(event) {
         rowArray[rowIndex][placeholder.toLowerCase()] = value;
     }
 
-    updateOutputBox(); // Update output box
+    updateTable(); // Update table
 }
 
 // Function to update the options of predecessor and successor dropdowns for all rows
@@ -140,7 +140,7 @@ function updateDropdownOptions(dropdown, names) {
     });
 }
 
-function updateOutputBox() {
+function updateTable() {
     const table = document.getElementById("myTable");
     const rows = table.querySelectorAll("tr"); // Get all rows except the header
 
@@ -158,4 +158,4 @@ function updateOutputBox() {
     }
 }
 
-updateOutputBox(); // Initial update to output box
+updateTable(); // Initial update to table
