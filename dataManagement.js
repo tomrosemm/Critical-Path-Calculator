@@ -140,11 +140,21 @@ function updateDropdownOptions(dropdown, names) {
     });
 }
 
-// Function to update output box
 function updateOutputBox() {
-    outputBox.innerHTML = ""; // Clear output box
+    const table = document.getElementById("myTable");
+    const rows = table.querySelectorAll("tr"); // Get all rows except the header
+
+    // Iterate over each rowArray element
     for (let i = 0; i < rowArray.length; i++) {
-        outputBox.innerHTML += Object.values(rowArray[i]) + "<br>"; // Update output box with latest data
+        const row = rowArray[i];
+        const cells = rows[i + 1].querySelectorAll("td"); // Get cells of the corresponding row
+
+        // Update cells with scheduling information
+        cells[4].textContent = row.est; // EST
+        cells[5].textContent = row.eft; // EFT
+        cells[6].textContent = row.lst; // LST
+        cells[7].textContent = row.lft; // LFT
+        cells[8].textContent = row.slack; // Slack
     }
 }
 
