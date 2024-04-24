@@ -7,11 +7,11 @@ $(document).ready(function(){
         newRow.append('<td><select class="form-select presuc-input predecessor" placeholder="Predecessors" multiple><option>---</option></select></td>');
         newRow.append('<td><select class="form-select presuc-input successor" placeholder="Successors" multiple><option>---</option></select></td>');
         newRow.append('<td><input type="text" class="form-control form-control-lg" placeholder="Duration" size="7"></td>');
-        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 100px; height: 50px"></td>');
-        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></td>');
-        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></td>');
-        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></td>');
-        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 100px; height: 50px"></div></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></div></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></div></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></div></td>');
+        newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 50px; height: 50px"></div></td>');
         newRow.append('<td><input type="button" class="btn btn-danger" value="Delete Row" onclick="deleteRow(this)"></td>');
 
         
