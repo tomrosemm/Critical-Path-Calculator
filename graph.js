@@ -67,6 +67,60 @@ function newGraph(tableRows) {
   return graph
 }
 
+
+
+// Returns a list of vertices formatted for gojs 
+function vertices(arr) {
+  let output = [];
+  for (const i in arr) { // Loop through each task
+    const currRow = arr[i];
+    // Set color to red if the task is on the critical path
+    const color = (currRow.slack == 0) ? "#F66" : "#FFF"
+    // Set up object for gojs
+    const currObj = {key: parseInt(i), text: currRow.name, color: color};
+    output.push(currObj); // Add object to list
+  }
+  return output; // Return the list
+}
+
+// Returns a list of edges formatted for gojs
+function edges(arr) {
+  let output = [];
+  const g = newGraph(arr); // Convert arr to a graph to better look at edges
+  for (const i in arr) { // Loop through each task
+    const successors = g.adjList.get(arr[i].name); // Get its successors
+    for (const j in successors) { // Loop through each successor
+      const s = successors[j];
+      const index = arr.findIndex((elem) => elem.name == s); // Find the successor's index
+      // TODO: Add toggleable text here for lead/lag time based on BTC calculations
+      const currObj = {from: parseInt(i), to: index}; // Format the edge between predecessor and successor properly
+      output.push(currObj); // Add object to list
+    }
+  }
+  return output; // Return the list
+}
+
+function createGraph(arr) {
+  console.log(arr);
+  // the node template describes how each Node should be constructed
+  diagram.nodeTemplate =
+    new go.Node("Auto")
+      .add(  // the Shape will go around the TextBlock
+        new go.Shape("RoundedRectangle")
+          // Shape.fill is bound to Node.data.color
+          .bind("fill", "color"),
+        new go.TextBlock({ margin: 8 }) // Specify a margin to add some room around the text
+          // TextBlock.text is bound to Node.data.key
+          .bind("text")
+      );
+
+  // the Model holds only the essential information describing the diagram
+  diagram.model = new go.GraphLinksModel(vertices(arr), edges(arr));
+
+  // enable Ctrl-Z to undo and Ctrl-Y to redo
+  diagram.undoManager.isEnabled = true;
+}
+
 function testing() {
   // Initialize table row sample data
   // Change these to user input, this is just a sample for how to use the functions
@@ -101,59 +155,6 @@ function testing() {
   const tableRows = [task0, task1, task2, task3]; // Encapsulate in array
   const g = newGraph(tableRows); // Run function
   createGraph(tableRows);
-}
-
-// Returns a list of vertices formatted for gojs 
-function vertices(arr) {
-  let output = [];
-  for (const i in arr) { // Loop through each task
-    const currRow = arr[i];
-    // Set color to red if the task is on the critical path
-    const color = (currRow.slack == 0) ? "#F66" : "#FFF"
-    // Set up object for gojs
-    const currObj = {key: parseInt(i), text: currRow.name, color: color};
-    output.push(currObj); // Add object to list
-  }
-  return output; // Return the list
-}
-
-// Returns a list of edges formatted for gojs
-function edges(arr) {
-  let output = [];
-  const g = newGraph(arr); // Convert arr to a graph to better look at edges
-  for (const i in arr) { // Loop through each task
-    const successors = g.adjList.get(arr[i].name); // Get its successors
-    for (const j in successors) { // Loop through each successor
-      const s = successors[j];
-      const index = arr.findIndex((elem) => elem.name == s); // Find the successor's index
-      // TODO: Add toggleable text here for lead/lag time based on BTC calculations
-      const currObj = {from: parseInt(i), to: index}; // Format the edge between predecessor and successor properly
-      output.push(currObj); // Add object to list
-    }
-  }
-  return output; // Return the list
-}
-
-// TODO: Make this reliant on calculate button press that accepts user input
-function createGraph(arr) {
-  console.log(arr);
-  // the node template describes how each Node should be constructed
-  diagram.nodeTemplate =
-    new go.Node("Auto")
-      .add(  // the Shape will go around the TextBlock
-        new go.Shape("RoundedRectangle")
-          // Shape.fill is bound to Node.data.color
-          .bind("fill", "color"),
-        new go.TextBlock({ margin: 8 }) // Specify a margin to add some room around the text
-          // TextBlock.text is bound to Node.data.key
-          .bind("text")
-      );
-
-  // the Model holds only the essential information describing the diagram
-  diagram.model = new go.GraphLinksModel(vertices(arr), edges(arr));
-
-  // enable Ctrl-Z to undo and Ctrl-Y to redo
-  diagram.undoManager.isEnabled = true;
 }
 
 //testing(); // Run testing as a script for now
