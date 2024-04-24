@@ -42,7 +42,7 @@ document.getElementById("addButton").addEventListener("click", function() {
 // Calculate function to call btc and graph
 function calculate() {
     calcbtc(rowArray);
-    //createGraph(rowArray);
+    createGraph(rowArray);
     updateOutputBox();
 }
 
