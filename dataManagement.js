@@ -8,7 +8,7 @@ class TableInputRow {
         this.name = name;
         this.predecessors = predecessors;
         this.successors = successors;
-        this.duration = int(duration);
+        this.duration = duration;
         this.est = est;
         this.eft = eft;
         this.lst = lst;
