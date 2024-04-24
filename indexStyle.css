@@ -1,16 +1,16 @@
 #CPCHeader {
-  text-decoration: black underline 4px;
+  text-decoration: black underline 3px;
   float: left;
   font-size: 48;
 }
 
 #infoicon {
   float: right;
-  padding-left: 20px;
-  padding-top: 20px;
-  width: 75px;
-  height: 75px;
-}
+  padding-left: 25px;/* |~~~~~~~~~~~~~~~|      Keep in pairs or the image isn't square*/
+  padding-top: 25px;/*  |~~~~~~~~~~~~~~~|    Keep in pairs or the image isn't square*/
+  width: 70px;/*        |               |      Keep in pairs or the image isn't square*/
+  height: 70px;/*    /~~\            /~~\    Keep in pairs or the image isn't square*/
+}/*                  \__/            \__/   Keep in pairs or the image isn't square*/
 
 #plusicon {
   margin: auto;
