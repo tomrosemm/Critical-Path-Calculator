@@ -3,7 +3,7 @@
 class TableInputRow {
     static latestId = -1; // Initialize latestId
 
-    constructor(name, predecessors = [], successors = [], duration, est, eft, lst, lft, slack) {
+    constructor(name, predecessors, successors, duration, est, eft, lst, lft, slack) {
         this.id = TableInputRow.incrementId();
         this.name = name;
         this.predecessors = predecessors;
@@ -44,6 +44,7 @@ function calculate() {
     calcbtc(rowArray);
     createGraph(rowArray);
     updateOutputBox();
+    console.log(rowArray);
 }
 
 // Delete row functionality
@@ -92,7 +93,14 @@ function updateTableRow(event) {
     const inputElement = event.target;
     const rowIndex = inputElement.parentElement.parentElement.rowIndex - 1; // Get row index
     const placeholder = inputElement.getAttribute('placeholder'); // Get placeholder value
-    const value = inputElement.value; // Get input value
+    let value = inputElement.value; // Get input value
+
+    if (inputElement.tagName === 'SELECT' && inputElement.multiple) {
+        // For multi-select elements
+        value = Array.from(inputElement.selectedOptions).map(option => option.value);
+    } else {
+        value = inputElement.value;
+    }
 
     if (placeholder === 'Name') {
         // Update the name of the row
@@ -102,6 +110,7 @@ function updateTableRow(event) {
     } else {
         // Update other properties
         rowArray[rowIndex][placeholder.toLowerCase()] = value;
+        console.log(value);
     }
 
     updateOutputBox(); // Update output box
