@@ -39,6 +39,12 @@ document.getElementById("addButton").addEventListener("click", function() {
     bindEventListenersForRow(); // Bind event listeners for the new row
 });
 
+// Calculate function to call btc and graph
+function calculate() {
+    calcbtc(rowArray);
+    createGraph(rowArray);
+}
+// Delete row functionality
 function deleteRow(button) {
     const row = button.closest('tr'); // Get the closest row element
     const rowIndex = row.rowIndex - 1; // Get the index of the row to delete
