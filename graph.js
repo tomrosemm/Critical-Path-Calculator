@@ -70,14 +70,16 @@ function newGraph(tableRows) {
 
 
 // Returns a list of vertices formatted for gojs 
-function vertices(arr) {
+function vertices(arr, display = false) {
   let output = [];
   for (const i in arr) { // Loop through each task
     const currRow = arr[i];
     // Set color to red if the task is on the critical path
     const color = (currRow.slack == 0) ? "#F66" : "#FFF"
     // Set up object for gojs
-    const currObj = {key: parseInt(i), text: currRow.name, color: color};
+    //
+    const txt = display ? "\n Duration: " + currRow.duration + "\n" + "Slack: " + arr[i].slack.toString() : "";
+    const currObj = {key: parseInt(i), text: currRow.name + txt, color: color};
     output.push(currObj); // Add object to list
   }
   return output; // Return the list
@@ -92,16 +94,14 @@ function edges(arr) {
     for (const j in successors) { // Loop through each successor
       const s = successors[j];
       const index = arr.findIndex((elem) => elem.name == s); // Find the successor's index
-      // TODO: Add toggleable text here for lead/lag time based on BTC calculations
-      const currObj = {from: parseInt(i), to: index}; // Format the edge between predecessor and successor properly
+      const currObj = {from: parseInt(i), to: index, text: "BONES"}; // Format the edge between predecessor and successor properly
       output.push(currObj); // Add object to list
     }
   }
   return output; // Return the list
 }
 
-function createGraph(arr) {
-  console.log(arr);
+function createGraph(arr, display = false) {
   // the node template describes how each Node should be constructed
   diagram.nodeTemplate =
     new go.Node("Auto")
@@ -115,7 +115,7 @@ function createGraph(arr) {
       );
 
   // the Model holds only the essential information describing the diagram
-  diagram.model = new go.GraphLinksModel(vertices(arr), edges(arr));
+  diagram.model = new go.GraphLinksModel(vertices(arr, display), edges(arr));
 
   // enable Ctrl-Z to undo and Ctrl-Y to redo
   diagram.undoManager.isEnabled = true;
