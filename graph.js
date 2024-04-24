@@ -127,6 +127,7 @@ function edges(arr) {
     for (const j in successors) { // Loop through each successor
       const s = successors[j];
       const index = arr.findIndex((elem) => elem.name == s); // Find the successor's index
+      g.printGraph()
       // TODO: Add toggleable text here for lead/lag time based on BTC calculations
       const currObj = {from: parseInt(i), to: index}; // Format the edge between predecessor and successor properly
       output.push(currObj); // Add object to list
