@@ -150,11 +150,11 @@ function updateTable() {
         const cells = rows[i + 1].querySelectorAll("td"); // Get cells of the corresponding row
 
         // Update cells with scheduling information
-        cells[4].textContent = row.est; // EST
-        cells[5].textContent = row.eft; // EFT
-        cells[6].textContent = row.lst; // LST
-        cells[7].textContent = row.lft; // LFT
-        cells[8].textContent = row.slack; // Slack
+        cells[4].innerHTML = `<div class="alert alert-success" style="margin:auto; width: 75px; height: 50px">${row.est}</div>`; // EST
+        cells[5].innerHTML = `<div class="alert alert-success" style="margin:auto; width: 75px; height: 50px">${row.eft}</div>`; // EFT
+        cells[6].innerHTML = `<div class="alert alert-success" style="margin:auto; width: 75px; height: 50px">${row.lst}</div>`; // LST
+        cells[7].innerHTML = `<div class="alert alert-success" style="margin:auto; width: 75px; height: 50px">${row.lft}</div>`; // LFT
+        cells[8].innerHTML = `<div class="alert alert-success" style="margin:auto; width: 75px; height: 50px">${row.slack}</div>`; // Slack Time
     }
 }
 
