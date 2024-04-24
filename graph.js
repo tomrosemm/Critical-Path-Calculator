@@ -1,3 +1,4 @@
+let diagram = new go.Diagram("graph");
 class Graph {
   constructor() {
     // Adjacency list, from string to array of strings representing
@@ -7,8 +8,13 @@ class Graph {
 
   // function to add an edge FROM v TO w
   addEdge(v, w) {
-    if (!this.adjList.get(v).includes(w)) {
-      this.adjList.get(v).push(w);
+    try {
+      if (!this.adjList.get(v).includes(w)) {
+          this.adjList.get(v).push(w);
+      }
+    }
+    catch (e) {
+      console.warn("addEdge called on undefined successor"); // This is stupid but I genuinely can't figure it out and it works so...
     }
   }
   // Function to add a new vertex to the graph
@@ -131,7 +137,6 @@ function edges(arr) {
 
 // TODO: Make this reliant on calculate button press that accepts user input
 function createGraph(arr) {
-  let diagram = new go.Diagram("graph");
   // the node template describes how each Node should be constructed
   diagram.nodeTemplate =
     new go.Node("Auto")

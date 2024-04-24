@@ -20,7 +20,7 @@ function calclstandlft(arr) {
 
 function calcslack(arr) {
   for (let i = 0; i < arr.length; i++) {
-    arr[i].slack = arr.lst - arr.est;
+    arr[i].slack = arr[i].lst - arr[i].est;
   }
 }
 
