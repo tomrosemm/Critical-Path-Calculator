@@ -16,6 +16,7 @@ $(document).ready(function(){
 
         
         
+        
         $(".possibleInputTable").append(newRow);
     }
 
