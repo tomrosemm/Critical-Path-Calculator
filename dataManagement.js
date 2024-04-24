@@ -44,7 +44,6 @@ function calculate() {
     calcbtc(rowArray);
     createGraph(rowArray);
     updateOutputBox();
-    console.log(rowArray);
 }
 
 // Delete row functionality
@@ -95,6 +94,7 @@ function updateTableRow(event) {
     const placeholder = inputElement.getAttribute('placeholder'); // Get placeholder value
     let value = inputElement.value; // Get input value
 
+    // For iterating through predecessor and successor inputs and adding them to array
     if (inputElement.tagName === 'SELECT' && inputElement.multiple) {
         // For multi-select elements
         value = Array.from(inputElement.selectedOptions).map(option => option.value);
@@ -110,7 +110,6 @@ function updateTableRow(event) {
     } else {
         // Update other properties
         rowArray[rowIndex][placeholder.toLowerCase()] = value;
-        console.log(value);
     }
 
     updateOutputBox(); // Update output box
