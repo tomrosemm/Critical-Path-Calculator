@@ -11,6 +11,7 @@ TODO: Replace sample picture for toggle info (currently the green circle)
 TODO: See if we can control how zoomed in the window is viewing the output of the graph, and extra if we can tie it to dynamically change appropriate to output graph
 TODO: (T) Delete button fill space better
 TODO: (T) Look into adjusting the gap between input row cells and the elements within
+TODO: Calculate critical path
 
 *OTHER
 TODO: Testing
