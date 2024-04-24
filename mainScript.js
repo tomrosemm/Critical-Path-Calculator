@@ -51,10 +51,10 @@ toggleSwitch.addEventListener('change', function() {
 
 // Toggle Switch On Function
 function toggleOn() {
-    console.log('Toggle is ON');
+    calculate(true);
 }
 
 // Toggle Switch Off Function
 function toggleOff() {
-    console.log('Toggle is OFF');
+    calculate(false);
 }
