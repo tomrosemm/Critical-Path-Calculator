@@ -42,7 +42,7 @@ document.getElementById("addButton").addEventListener("click", function() {
 // Calculate function to call btc and graph
 function calculate() {
     calcbtc(rowArray);
-    createGraph(rowArray);
+    //createGraph(rowArray);
     updateOutputBox();
 }
 
@@ -116,7 +116,7 @@ function updateAllDropdownOptions() {
     dropdowns.forEach((dropdown) => {
         updateDropdownOptions(dropdown, names);
     });
-}
+}//bob
 
 // Function to update the options of a specific dropdown
 function updateDropdownOptions(dropdown, names) {
