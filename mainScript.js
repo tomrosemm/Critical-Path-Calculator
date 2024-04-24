@@ -36,6 +36,16 @@ function showSpinner() {
     }
 }
 
+const toggleSwitch = document.getElementById('toggle');
+const toggleLabel = document.getElementById('toggle-label');
+
+toggleSwitch.addEventListener('change', function() {
+    if (this.checked) {
+        console.log('Toggle is ON');
+    } else {
+        console.log('Toggle is OFF');
+    }
+});
 
 
 // IDK if it's obvious and I'm slow but I think using the clicking of the predecessor & successor dropdown menus as the 
