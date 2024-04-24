@@ -45,11 +45,11 @@ function calcest(arr, index) {
 }
 
 function calceft(arr, index) {
-  arr[index].eft = arr[index].est + arr[index].duration;
+  arr[index].eft = arr[index].est + parseInt(arr[index].duration);
 }
 
 function calclst(arr, index) {
-  arr[index].lst = arr[index].lft - arr[index].duration;
+  arr[index].lst = arr[index].lft - parseInt(arr[index].duration);
 }
 
 function calclft(arr, index) {
