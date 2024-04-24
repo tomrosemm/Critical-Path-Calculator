@@ -1,7 +1,7 @@
 * Add anything you think of, Initial things you know you're on if you'd like
 
 * CODING
-TODO: Moving graph code from data_testing to index.html
+TODO: (XJ) Moving graph code from data_testing to index.html
 TODO:(S) Input validation/cleaning
 TODO: See if we can eliminate tasks own name from list of predecessors/successors available to it - maybe a separate function that checks current table row and deletes any matches being populated to it that have the same name as the current task name. If we shove that in the end of the update predecessors successors would that work?
 TODO:(XM) Boundary times calculating and displaying to table
