@@ -26,7 +26,7 @@ function calcslack(arr) {
 
 function calcest(arr, index) {
   // Set initial activity est to 0
-  if (index == 0) {
+  if (arr[index].predecessors.length == 1 && arr[index].predecessors[0] == "") {
     arr[index].est = 0;
     return;
   }
@@ -54,11 +54,11 @@ function calclst(arr, index) {
 
 function calclft(arr, index) {
   // Set final activity LFT to be the EFT of the final task (They did this, but I don't think it's necessary)
-  //  if (index == arr.length - 1) {
-  //    arr[index].lft = arr[index].eft;
-  //    return;
-  //  }
-  let min = arr[index].eft;
+  if (arr[index].successors.length == 1 && arr[index].successors[0] == "") {
+    arr[index].lft = arr[index].eft;
+    return;
+    }
+  let min = Number.POSITIVE_INFINITY;
   // Loop through each other task
   for (let j = 0; j < arr.length; j++) {
     // If our task has that task as a predecessor
