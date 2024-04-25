@@ -147,11 +147,9 @@ console.log("array:", names);
 
     // Add options for all names
     names.forEach((name) => {
-        console.log("name:", name, "   currentname: ", currentName);
         if (name === names[i]) {
         }
         else {
-            console.log("made it here");
             const option = document.createElement('option');
             option.text = name;
             option.value = name;
