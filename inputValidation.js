@@ -18,15 +18,15 @@ function nameValid () {
   for(let i = 0; i < rowArray.length; i++) {
     //console.log(rowArray[i].name);
     if(containsSpecialChars(rowArray[i].name)) {
-      console.log('Invalid name input: special character');
+      //console.log('Invalid name input: special character');
       return false;
     }
     if(rowArray[i].name == '') {
-      console.log('Invalid name input: no input');
+      //console.log('Invalid name input: no input');
       return false;
     }
   }
-  console.log('Valid name inputs');
+  //console.log('Valid name inputs');
   return true;
 }
 
@@ -38,26 +38,26 @@ function durationValid () {
     //console.log(rowArray[i].duration);
 
     if(Number.isInteger(parseInt(rowArray[i].duration))==false) {
-      console.log('Invalid duration input: not and integer');
+      //console.log('Invalid duration input: not and integer');
        return false;
     }
     if(parseInt(rowArray[i].duration) < 0) {
-      console.log('Invalid duration input: Negative number');
+      //console.log('Invalid duration input: Negative number');
       return false;
     }
   }
-  console.log('Valid duration inputs');
+  //console.log('Valid duration inputs');
   return true;
 }
 
 //calls both functions
 function valid() {
   if(nameValid()==true && durationValid()==true) {
-    console.log('Dont disable button: Valid');
+    //console.log('Dont disable button: Valid');
     cbutton.disabled = false;
   }
   else {
-    console.log('Disabel button: Not valid');
+    //console.log('Disabel button: Not valid');
     cbutton.disabled = true;
   }
 }
