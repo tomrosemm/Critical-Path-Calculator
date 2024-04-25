@@ -37,7 +37,7 @@ function calcest(arr, index) {
     if (arr[index].predecessors.includes(arr[j].name)) {
       if (arr[j].eft > max) { // Set the new EST to that task's EFT
         max = arr[j].eft;
-      // If we have multiple predecessors, set the task to the maximum predecessor EFT
+        // If we have multiple predecessors, set the task to the maximum predecessor EFT
       }
     }
   }
@@ -57,7 +57,7 @@ function calclft(arr, index) {
   if (arr[index].successors.length == 1 && arr[index].successors[0] == "") {
     arr[index].lft = arr[index].eft;
     return;
-    }
+  }
   let min = Number.POSITIVE_INFINITY;
   // Loop through each other task
   for (let j = 0; j < arr.length; j++) {
@@ -65,7 +65,7 @@ function calclft(arr, index) {
     if (arr[index].successors.includes(arr[j].name)) {
       if (arr[j].lst < min) { // Set the new EST to that task's EFT
         min = arr[j].lst;
-      // If we have multiple predecessors, set the task to the maximum predecessor EFT
+        // If we have multiple predecessors, set the task to the maximum predecessor EFT
       }
     }
   }

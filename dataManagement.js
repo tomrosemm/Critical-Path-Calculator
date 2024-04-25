@@ -32,7 +32,7 @@ const tableInputRow0 = new TableInputRow("", [""], [""], "", "", "", "", "", "")
 rowArray.push(tableInputRow0);
 
 // Event listener for the "Add Row" button
-document.getElementById("addButton").addEventListener("click", function() {
+document.getElementById("addButton").addEventListener("click", function () {
     const newRow = new TableInputRow("", [""], [""], "", "", "", "", "", "");
     rowArray.push(newRow); // Push the new TableInputRow object to the rowArray
     bindEventListenersForRow(); // Bind event listeners for the new row
@@ -77,12 +77,12 @@ function deleteRow(button) {
 function bindEventListenersForRow() {
     const table = document.querySelector('table.possibleInputTable');
 
-    table.addEventListener('input', function(event) {
+    table.addEventListener('input', function (event) {
         const target = event.target;
         if (target.matches('input[type="text"]') || target.matches('select')) {
             updateTableRow(event);
         }
-        
+
     });
 }
 
@@ -127,7 +127,7 @@ function updateAllDropdownOptions() {
 
     dropdowns.forEach((dropdown, i) => {
         i++;
-        ind = Math.ceil(i/2) - 1;
+        ind = Math.ceil(i / 2) - 1;
         updateDropdownOptions(dropdown, names, ind);
     });
 }
@@ -152,7 +152,7 @@ function updateDropdownOptions(dropdown, names, ind) {
     });
 
     // Validates inputs to determine if calculate should be available
-    valid(); 
+    valid();
 }
 
 function updateTable() {
@@ -173,7 +173,7 @@ function updateTable() {
     }
 
     // Validates inputs to determine if calculate should be available
-    valid(); 
+    valid();
 }
 
 updateTable(); // Initial update to table

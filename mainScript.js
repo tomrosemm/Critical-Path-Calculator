@@ -1,5 +1,5 @@
 // Add Row Function - make sure it matches working table rows to ensure synchronization between original rows and added rows
-$(document).ready(function(){
+$(document).ready(function () {
 
     function addNewRow() {
         var newRow = $("<tr>");
@@ -13,11 +13,11 @@ $(document).ready(function(){
         newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></div></td>');
         newRow.append('<td><div class="alert alert-success" style="margin:auto; width: 75px; height: 50px"></div></td>');
         newRow.append('<td><input type="button" class="btn btn-danger" style="height: 50px;" value="Delete Row" onclick="deleteRow(this)"></td>');
-        
+
         $(".possibleInputTable").append(newRow);
     }
 
-    $("#addButton").click(function(){
+    $("#addButton").click(function () {
         addNewRow();
     });
 });
@@ -27,11 +27,11 @@ $(document).ready(function(){
 const toggleSwitch = document.getElementById('toggle');
 const toggleLabel = document.getElementById('toggle-label');
 
-toggleSwitch.addEventListener('change', function() {
+toggleSwitch.addEventListener('change', function () {
     // OFF
-    if (this.checked) { 
+    if (this.checked) {
         toggleOff()
-    } 
+    }
     // ON
     else {
         toggleOn();

@@ -6,22 +6,22 @@ const cbutton = document.getElementById('calculateButton');
 //function that checks a given string for special characters. 
 //returns true if there are
 function containsSpecialChars(str) {
-    const specialChars =
-      /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    return specialChars.test(str);
+  const specialChars =
+    /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+  return specialChars.test(str);
 }
 
 //function that checks name for every row of rowArray. 
 //if it is valid it returns true. 
 //if it is an invalid name it returns false
-function nameValid () {
-  for(let i = 0; i < rowArray.length; i++) {
+function nameValid() {
+  for (let i = 0; i < rowArray.length; i++) {
     //console.log(rowArray[i].name);
-    if(containsSpecialChars(rowArray[i].name)) {
+    if (containsSpecialChars(rowArray[i].name)) {
       //console.log('Invalid name input: special character');
       return false;
     }
-    if(rowArray[i].name == '') {
+    if (rowArray[i].name == '') {
       //console.log('Invalid name input: no input');
       return false;
     }
@@ -35,15 +35,15 @@ function nameValid () {
 //fuction that checks duration for every row of rowArray. 
 //if it is a positive interger is is valid and thus returns true. 
 //if it is anything else it is invalid and thus returns false
-function durationValid () {
-  for(let i = 0; i < rowArray.length; i++) {
+function durationValid() {
+  for (let i = 0; i < rowArray.length; i++) {
     //console.log(rowArray[i].duration);
 
-    if(Number.isInteger(parseInt(rowArray[i].duration))==false) {
+    if (Number.isInteger(parseInt(rowArray[i].duration)) == false) {
       //console.log('Invalid duration input: not and integer');
-       return false;
+      return false;
     }
-    if(parseInt(rowArray[i].duration) < 0) {
+    if (parseInt(rowArray[i].duration) < 0) {
       //console.log('Invalid duration input: Negative number');
       return false;
     }
@@ -54,7 +54,7 @@ function durationValid () {
 
 //calls both functions
 function valid() {
-  if(nameValid()==true && durationValid()==true) {
+  if (nameValid() == true && durationValid() == true) {
     //console.log('Dont disable button: Valid');
     cbutton.disabled = false;
   }
