@@ -119,6 +119,7 @@ function updateTableRow(event) {
 // Function to update the options of predecessor and successor dropdowns for all rows
 function updateAllDropdownOptions(currentName) {
     currentName = currentName;
+    console.log(currentName);
     const names = rowArray.map(row => row.name); // Get all names
 
     // Update the options of predecessor and successor dropdowns for all rows
@@ -131,13 +132,14 @@ function updateAllDropdownOptions(currentName) {
 // Function to update the options of a specific dropdown
 function updateDropdownOptions(dropdown, names, currentName) {
     currentName = currentName;
-
+    console.log(currentName);
     // Clear existing options
     dropdown.innerHTML = '<option></option>';
 
     // Add options for all names
     names.forEach((name) => {
         if (name !== currentName) {
+            console.log(currentName);
             const option = document.createElement('option');
             option.text = name;
             option.value = name;
