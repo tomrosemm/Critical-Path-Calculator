@@ -56,7 +56,6 @@ rowArray.addEventListener("change", (e)=> {
     calcButton.disabled = true;
   }
 })
-*/
 
 cbutton.addEventListener("click", (e) => {
   
@@ -68,3 +67,4 @@ cbutton.addEventListener("click", (e) => {
     console.log('NNNNNNNNNNNNNNNNNNNNNNNNNNNNN');
   }
 })
+*/
