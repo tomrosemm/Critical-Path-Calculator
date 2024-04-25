@@ -1,10 +1,3 @@
-For inputs, I think the main concerns I'm thinking of are:
-No two names can be the same
-Names shouldn't have symbols in them (but spaces should be fine?)
-No task should have itself as a pre/successor (This was causing problems trying to just exclude it outright)
-Durations should be only numbers, no symbols or letters
-
-
 //function that checks a given string for special characters. 
 //returns true if there are
 function containsSpecialChars(str) {
