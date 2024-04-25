@@ -1,3 +1,10 @@
+For inputs, I think the main concerns I'm thinking of are:
+No two names can be the same
+Names shouldn't have symbols in them (but spaces should be fine?)
+No task should have itself as a pre/successor (This was causing problems trying to just exclude it outright)
+Durations should be only numbers, no symbols or letters
+
+
 //function that checks a given string for special characters. 
 //returns true if there are
 function containsSpecialChars(str) {
@@ -11,15 +18,18 @@ function containsSpecialChars(str) {
 //if it is an invalid name it returns false
 function nameValid () {
   for(let i = 0; i < rowArray.length; i++) {
+    //console.log(rowArray[i].name);
     if(containsSpecialChars(rowArray[i].name)) {
-      console.log('Invalid input');
+      console.log('Invalid name input: special character');
       return false;
     }
-    else {
-      console.log('Valid input');
+    if(rowArray[i].name == '') {
+      console.log('Invalid name input: no input');
+      return false;
     }
   }
-return true;
+  console.log('Valid name inputs');
+  return true;
 }
 
 //fuction that checks duration for every row of rowArray. 
@@ -27,17 +37,41 @@ return true;
 //if it is anything else it is invalid and thus returns false
 function durationValid () {
   for(let i = 0; i < rowArray.length; i++) {
-    if(Number.isInteger(rowArray[i].duration) = false) {
-      console.log('Not an integer');
-      return false;
+    //console.log(rowArray[i].duration);
+    if(Number.isInteger(rowArray[i].duration)==false) {
+      console.log('Invalid duration input: not and integer');
+       return false;
     }
     if(rowArray[i].duration < 0) {
-      console.log('Negative number')
+      console.log('Invalid duration input: Negative number');
       return false;
     }
-    else {
-      console.log('Valid number')
-    }
   }
+  console.log('Valid duration inputs');
   return true;
 }
+
+/*
+const cbutton = document.getElementById('calculateButton');
+
+rowArray.addEventListener("change", (e)=> {
+  console.log(rowArray.name);
+  if(nameValid == true && durationValid == true) {
+    calcButton.disabled = false;
+  }
+  else {
+    calcButton.disabled = true;
+  }
+})
+*/
+
+cbutton.addEventListener("click", (e) => {
+  
+  if(nameValid()==true && durationValid()==true) {
+    console.log('YYYYYYYYYYYYYYYYYYYYYYYYYYY');
+    cbutton.disabled = true;
+  }
+  else {
+    console.log('NNNNNNNNNNNNNNNNNNNNNNNNNNNNN');
+  }
+})
