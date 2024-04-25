@@ -94,6 +94,7 @@ function updateTableRow(event) {
     const rowIndex = inputElement.parentElement.parentElement.rowIndex - 1; // Get row index
     const placeholder = inputElement.getAttribute('placeholder'); // Get placeholder value
     let value = inputElement.value; // Get input value
+    currentName = rowArray[rowIndex].name;
 
     // For iterating through predecessor and successor inputs and adding them to array
     if (inputElement.tagName === 'SELECT' && inputElement.multiple) {
@@ -124,22 +125,33 @@ function updateAllDropdownOptions(currentName) {
 
     // Update the options of predecessor and successor dropdowns for all rows
     const dropdowns = document.querySelectorAll('.presuc-input');
-    dropdowns.forEach((dropdown) => {
-        updateDropdownOptions(dropdown, names, currentName);
-    });
+    console.log("dropdowns:", dropdowns);
+    //const i = 0;
+    for (let i = 0; i < 30; i++) {
+    //dropdowns.forEach((dropdown) => {
+        console.log("i", i);
+        i++;
+
+        ind = Math.ceil(i/2) - 11;
+        console.log("index",ind);
+        updateDropdownOptions(dropdown, names, ind);
+    };
 }
 
 // Function to update the options of a specific dropdown
-function updateDropdownOptions(dropdown, names, currentName) {
-    currentName = currentName;
-    console.log(currentName);
+function updateDropdownOptions(dropdown, names, ind) {
+    i = ind;
+console.log("array:", names);
     // Clear existing options
     dropdown.innerHTML = '<option></option>';
 
     // Add options for all names
     names.forEach((name) => {
-        if (name !== currentName) {
-            console.log(currentName);
+        console.log("name:", name, "   currentname: ", currentName);
+        if (name === names[i]) {
+        }
+        else {
+            console.log("made it here");
             const option = document.createElement('option');
             option.text = name;
             option.value = name;
