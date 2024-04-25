@@ -22,17 +22,6 @@ $(document).ready(function(){
     });
 });
 
-// Loading Spinner called on calculate button press
-function showSpinner() {
-    // Get the spinner element
-    const spinner = document.querySelector('.spinner-grow');
-
-    // Make sure the spinner element exists
-    if (spinner) {
-        // Show the spinner by removing the 'd-none' class
-        spinner.classList.remove('d-none');
-    }
-}
 
 // Listener for toggle switch
 const toggleSwitch = document.getElementById('toggle');

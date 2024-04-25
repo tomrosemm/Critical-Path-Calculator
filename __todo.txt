@@ -12,7 +12,8 @@ TODO:(XT) Replace sample picture for toggle info (currently the green circle)
 TODO:(XT) Delete button fill space better
 TODO:(XJ) Calculate critical path - Done
 TODO:(XT) Remove testing pages links
-TODO: (If time allows) Start script wwith calculate button disabled to not allow blank erroneous input
+TODO: (If time allows) Start script with calculate button disabled to not allow blank erroneous input
+TODO:(XT) Disable or time spinner
 
 *OTHER
 TODO: Testing
