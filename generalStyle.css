@@ -272,5 +272,5 @@ li a:hover {
 }
 
 .help-scroll {
-    overflow-y: scroll;
+    /*overflow-y: scroll; Turn on if need to manage a lot of content in box*/
 }
