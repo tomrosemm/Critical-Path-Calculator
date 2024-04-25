@@ -47,7 +47,13 @@ function durationValid () {
   return true;
 }
 
-const cbutton = document.getElementById('calculateButton');
+//calls both functions
+function Valid() {
+  nameValid();
+  durationValid();
+}
+
+//const cbutton = document.getElementById('calculateButton');
 
 /*
 rowArray.addEventListener("change", (e)=> {
