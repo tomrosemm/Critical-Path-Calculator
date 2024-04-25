@@ -94,7 +94,6 @@ function updateTableRow(event) {
     const rowIndex = inputElement.parentElement.parentElement.rowIndex - 1; // Get row index
     const placeholder = inputElement.getAttribute('placeholder'); // Get placeholder value
     let value = inputElement.value; // Get input value
-    currentName = rowArray[rowIndex].name;
 
     // For iterating through predecessor and successor inputs and adding them to array
     if (inputElement.tagName === 'SELECT' && inputElement.multiple) {
