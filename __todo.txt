@@ -11,7 +11,7 @@ TODO:(XJ) Make relevant info appear on graph with function tied to toggle trigge
 TODO:(T) Replace sample picture for toggle info (currently the green circle)
 TODO:(XT) Delete button fill space better
 TODO:(XJ) Calculate critical path - Done
-TODO:(T) Remove testing pages links
+TODO:(XT) Remove testing pages links
 
 *OTHER
 TODO: Testing
