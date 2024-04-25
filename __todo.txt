@@ -8,7 +8,7 @@ TODO:(XM) Boundary times calculating and displaying to table
 TODO:(T - Keep adding quick usage info as needed) Quick Info in some form on main page, try as a div canvas or card type element on upper right of screen above graph in line with title. Contain quick usage tips for multiple menus and graph viewer, etc
 TODO:(T or S) Populate cards on help page with different topics
 TODO:(XJ) Make relevant info appear on graph with function tied to toggle triggers for on and off (Potentially remove from scope to make deadline?)
-TODO: Replace sample picture for toggle info (currently the green circle)
+TODO:(T) Replace sample picture for toggle info (currently the green circle)
 TODO: See if we can control how zoomed in the window is viewing the output of the graph, and extra if we can tie it to dynamically change appropriate to output graph
 TODO: (XT) Delete button fill space better
 TODO:(XJ) Calculate critical path - Done
