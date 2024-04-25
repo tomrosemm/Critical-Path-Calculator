@@ -270,7 +270,3 @@ li a:hover {
 .table-input {
     line-height: 2em;
 }
-
-.help-scroll {
-    /*overflow-y: scroll; Turn on if need to manage a lot of content in box*/
-}
