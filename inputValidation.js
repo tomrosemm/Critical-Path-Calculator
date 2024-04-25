@@ -1,3 +1,5 @@
+//console.log('inputValidation accessed');
+
 //function that checks a given string for special characters. 
 //returns true if there are
 function containsSpecialChars(str) {
@@ -31,11 +33,12 @@ function nameValid () {
 function durationValid () {
   for(let i = 0; i < rowArray.length; i++) {
     //console.log(rowArray[i].duration);
-    if(Number.isInteger(rowArray[i].duration)==false) {
+
+    if(Number.isInteger(parseInt(rowArray[i].duration))==false) {
       console.log('Invalid duration input: not and integer');
        return false;
     }
-    if(rowArray[i].duration < 0) {
+    if(parseInt(rowArray[i].duration) < 0) {
       console.log('Invalid duration input: Negative number');
       return false;
     }
@@ -44,18 +47,20 @@ function durationValid () {
   return true;
 }
 
-/*
 const cbutton = document.getElementById('calculateButton');
 
+/*
 rowArray.addEventListener("change", (e)=> {
   console.log(rowArray.name);
-  if(nameValid == true && durationValid == true) {
+  if(nameValid == true  && durationValid == true ) {
     calcButton.disabled = false;
   }
   else {
     calcButton.disabled = true;
   }
 })
+
+
 
 cbutton.addEventListener("click", (e) => {
   
@@ -67,4 +72,5 @@ cbutton.addEventListener("click", (e) => {
     console.log('NNNNNNNNNNNNNNNNNNNNNNNNNNNNN');
   }
 })
+
 */
