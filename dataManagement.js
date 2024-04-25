@@ -35,11 +35,8 @@ rowArray.push(tableInputRow0);
 document.getElementById("addButton").addEventListener("click", function() {
     const newRow = new TableInputRow("", [""], [""], "", "", "", "", "", "");
     rowArray.push(newRow); // Push the new TableInputRow object to the rowArray
-    updateTable(); // Update the table to display the new row
     bindEventListenersForRow(); // Bind event listeners for the new row
-
-    // Validates inputs to determine if calculate should be available
-    valid(); 
+    updateTable(); // Update the table to display the new row
 });
 
 // Calculate function to call btc and graph
@@ -74,9 +71,6 @@ function deleteRow(button) {
 
     // Update table
     updateTable();
-
-    // Validates inputs to determine if calculate should be available
-    valid(); 
 }
 
 // Function to bind event listeners for rows
@@ -90,9 +84,6 @@ function bindEventListenersForRow() {
         }
         
     });
-
-    // Validates inputs to determine if calculate should be available
-    valid(); 
 }
 
 bindEventListenersForRow(); // Initial event listeners bind
@@ -134,9 +125,6 @@ function updateAllDropdownOptions() {
     dropdowns.forEach((dropdown) => {
         updateDropdownOptions(dropdown, names);
     });
-
-    // Validates inputs to determine if calculate should be available
-    valid(); 
 }
 
 // Function to update the options of a specific dropdown
