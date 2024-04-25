@@ -51,7 +51,7 @@ function durationValid () {
 }
 
 //calls both functions
-function Valid() {
+function valid() {
   if(nameValid()==true && durationValid()==true) {
     console.log('Dont disable button: Valid');
     cbutton.disabled = false;
