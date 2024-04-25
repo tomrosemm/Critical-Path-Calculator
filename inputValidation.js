@@ -30,6 +30,19 @@ function nameValid () {
   return true;
 }
 
+
+//checks to see if predeccessor and successor 
+function psValid(array,name) {
+  console.log('psValid called successfully');
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] == n) {
+      cbutton.disabled = true;
+      return;
+    } 
+  }
+  return;
+}
+
 //fuction that checks duration for every row of rowArray. 
 //if it is a positive interger is is valid and thus returns true. 
 //if it is anything else it is invalid and thus returns false
