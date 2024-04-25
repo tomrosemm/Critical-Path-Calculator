@@ -94,6 +94,7 @@ function updateTableRow(event) {
     const rowIndex = inputElement.parentElement.parentElement.rowIndex - 1; // Get row index
     const placeholder = inputElement.getAttribute('placeholder'); // Get placeholder value
     let value = inputElement.value; // Get input value
+    currentName = rowArray[rowIndex].name;
 
     // For iterating through predecessor and successor inputs and adding them to array
     if (inputElement.tagName === 'SELECT' && inputElement.multiple) {
@@ -107,7 +108,7 @@ function updateTableRow(event) {
         // Update the name of the row
         rowArray[rowIndex].name = value;
         // Update the options of predecessor and successor dropdowns for all rows
-        updateAllDropdownOptions(value);
+        updateAllDropdownOptions();
     } else {
         // Update other properties
         rowArray[rowIndex][placeholder.toLowerCase()] = value;
@@ -117,29 +118,33 @@ function updateTableRow(event) {
 }
 
 // Function to update the options of predecessor and successor dropdowns for all rows
-function updateAllDropdownOptions(currentName) {
-    currentName = currentName;
-    console.log(currentName);
+function updateAllDropdownOptions() {
     const names = rowArray.map(row => row.name); // Get all names
 
     // Update the options of predecessor and successor dropdowns for all rows
     const dropdowns = document.querySelectorAll('.presuc-input');
-    dropdowns.forEach((dropdown) => {
-        updateDropdownOptions(dropdown, names, currentName);
+
+    i = 0;
+
+    dropdowns.forEach((dropdown, i) => {
+        i++;
+        ind = Math.ceil(i/2) - 1;
+        updateDropdownOptions(dropdown, names, ind);
     });
 }
 
 // Function to update the options of a specific dropdown
-function updateDropdownOptions(dropdown, names, currentName) {
-    currentName = currentName;
-    console.log(currentName);
+function updateDropdownOptions(dropdown, names, ind) {
+    i = ind;
+
     // Clear existing options
     dropdown.innerHTML = '<option></option>';
 
     // Add options for all names
     names.forEach((name) => {
-        if (name !== currentName) {
-            console.log(currentName);
+        if (name === names[i]) {
+        }
+        else {
             const option = document.createElement('option');
             option.text = name;
             option.value = name;
