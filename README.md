@@ -1,5 +1,5 @@
+# Intro
 Group project for SWE-380 focusing on highlighting a critical path calculation.
-
 
 # Hosting
 To host, simply clone this full project and all its files with index.html available to users. No Node/other considerations should be required.
