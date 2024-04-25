@@ -107,7 +107,7 @@ function updateTableRow(event) {
         // Update the name of the row
         rowArray[rowIndex].name = value;
         // Update the options of predecessor and successor dropdowns for all rows
-        updateAllDropdownOptions();
+        updateAllDropdownOptions(value);
     } else {
         // Update other properties
         rowArray[rowIndex][placeholder.toLowerCase()] = value;
@@ -117,27 +117,32 @@ function updateTableRow(event) {
 }
 
 // Function to update the options of predecessor and successor dropdowns for all rows
-function updateAllDropdownOptions() {
+function updateAllDropdownOptions(currentName) {
+    currentName = currentName;
     const names = rowArray.map(row => row.name); // Get all names
 
     // Update the options of predecessor and successor dropdowns for all rows
     const dropdowns = document.querySelectorAll('.presuc-input');
     dropdowns.forEach((dropdown) => {
-        updateDropdownOptions(dropdown, names);
+        updateDropdownOptions(dropdown, names, currentName);
     });
 }
 
 // Function to update the options of a specific dropdown
-function updateDropdownOptions(dropdown, names) {
+function updateDropdownOptions(dropdown, names, currentName) {
+    currentName = currentName;
+
     // Clear existing options
     dropdown.innerHTML = '<option></option>';
 
     // Add options for all names
     names.forEach((name) => {
-        const option = document.createElement('option');
-        option.text = name;
-        option.value = name;
-        dropdown.add(option);
+        if (name !== currentName) {
+            const option = document.createElement('option');
+            option.text = name;
+            option.value = name;
+            dropdown.add(option);
+        }
     });
 
     // Validates inputs to determine if calculate should be available
