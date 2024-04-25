@@ -1,5 +1,8 @@
 //console.log('inputValidation accessed');
 
+
+const cbutton = document.getElementById('calculateButton');
+
 //function that checks a given string for special characters. 
 //returns true if there are
 function containsSpecialChars(str) {
@@ -47,7 +50,18 @@ function durationValid () {
   return true;
 }
 
-const cbutton = document.getElementById('calculateButton');
+//calls both functions
+function valid() {
+  if(nameValid()==true && durationValid()==true) {
+    console.log('Dont disable button: Valid');
+    cbutton.disabled = false;
+  }
+  else {
+    console.log('Disabel button: Not valid');
+    cbutton.disabled = true;
+  }
+}
+
 
 /*
 rowArray.addEventListener("change", (e)=> {

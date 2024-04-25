@@ -35,8 +35,8 @@ rowArray.push(tableInputRow0);
 document.getElementById("addButton").addEventListener("click", function() {
     const newRow = new TableInputRow("", [""], [""], "", "", "", "", "", "");
     rowArray.push(newRow); // Push the new TableInputRow object to the rowArray
-    updateTable(); // Update the table to display the new row
     bindEventListenersForRow(); // Bind event listeners for the new row
+    updateTable(); // Update the table to display the new row
 });
 
 // Calculate function to call btc and graph
@@ -82,6 +82,7 @@ function bindEventListenersForRow() {
         if (target.matches('input[type="text"]') || target.matches('select')) {
             updateTableRow(event);
         }
+        
     });
 }
 
@@ -138,6 +139,9 @@ function updateDropdownOptions(dropdown, names) {
         option.value = name;
         dropdown.add(option);
     });
+
+    // Validates inputs to determine if calculate should be available
+    valid(); 
 }
 
 function updateTable() {
@@ -156,6 +160,9 @@ function updateTable() {
         cells[7].innerHTML = `<div class="alert alert-success" style="margin:auto; width: 75px; height: 50px">${row.lft}</div>`; // LFT
         cells[8].innerHTML = `<div class="alert alert-success" style="margin:auto; width: 75px; height: 50px">${row.slack}</div>`; // Slack Time
     }
+
+    // Validates inputs to determine if calculate should be available
+    valid(); 
 }
 
 updateTable(); // Initial update to table
